@@ -5,6 +5,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>login</title>
+<link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
@@ -12,9 +13,9 @@
 <div class="formWrap">
 <h3>login</h3>
 <form action="" method="post" >
-	<input type="text" name="id" placeholder="Phone number, username, or email">
-	<input type="password" name="pwd" placeholder="Password">
-	<input type="submit" value="Log In">
+	<input type="text" name="id" placeholder="이메일 주소 또는 사용자 이름">
+	<input type="password" name="pwd" placeholder="비밀번호">
+	<input class="submit" type="submit" value="Log In">
 </form>
 <div class="or">
 	<span class="line"></span>
