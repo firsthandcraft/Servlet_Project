@@ -14,8 +14,21 @@
 	<h4>사용언어</h4>
 	<p>jsp=>EL,JSTL</p>
 	<p>servlet</p>
+	<p>java</p>
+	<p>db - oracledb 버전</p>
 	<hr>
-	<h4>로그인, 회원가입</h4>
+	
+	<h4>DB</h4>
+	<p>drop table servlet_login_01; 
+		create table servlet_login_01(
+		email varchar2(80)  primary key, 
+		password  varchar2(20) not null, 
+		name varchar2(20) not null,
+		regdate date,
+		gender number
+		);
+		select * from servlet_login_01;
+	</p>
 	<hr>
 	<h4>로그인, 회원가입</h4>
 	<p></p>

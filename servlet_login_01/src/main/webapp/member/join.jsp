@@ -63,7 +63,7 @@
 </div>
 <div class="facebook">
 	
-	<p>계정이 있나요?<a href ="">Log in</a><p>
+	<p>계정이 있나요?<a href =""> Log in</a><p>
 </div>
 </div>
 </body>
