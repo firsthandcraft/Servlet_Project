@@ -48,11 +48,16 @@ public class DaoImpl implements Dao{//Dao인터페이스를 상속
 	public void insert(Member m) {
 		// TODO Auto-generated method stub
 		//dbConnection 1번째 방법으로 실행(conn만)
-		String sql="insert into values()";
+		String sql="insert into servlet_login_01 values(?,?,?,?,?)";
 		try {
 			conn=db.getConnection();
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(0, sql);
+			pstmt.setString(1, m.getEmail());
+			pstmt.setString(2, m.getPwd());
+			pstmt.setString(3, m.getName());
+			pstmt.setString(4, m.getDay());
+			pstmt.setInt(5, m.getGender());
+			pstmt.executeUpdate();
 		} catch(SQLException e) {//sql의 예외
 			e.printStackTrace();
 		} finally {
@@ -63,11 +68,14 @@ public class DaoImpl implements Dao{//Dao인터페이스를 상속
 	@Override
 	public void update(Member m) {
 		// TODO Auto-generated method stub
-		String sql="insert into values()";
+		String sql="update servlet_login_01 set pwd=?,name=?,regdate=? where email=?";
 		try {
 			con();
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(0, sql);
+			pstmt.setString(1, m.getPwd());
+			pstmt.setString(2, m.getName());
+			pstmt.setString(3, m.getDay());
+			pstmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -76,34 +84,39 @@ public class DaoImpl implements Dao{//Dao인터페이스를 상속
 	}
 
 	@Override
-	public void delete(Member m) {
+	public void delete(String email) {
 		// TODO Auto-generated method stub
-		String sql="insert into values()";
+		String sql="delete servlet_login_01 where email=?";
 		try {
 			con();
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(0, sql);
+			pstmt.setString(1, email);
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
 			discon();
 		}
 	}
-
+	//select rs.get 안넣었으
 	@Override
 	public Member select(String email) {
 		// TODO Auto-generated method stub
-		String sql="insert into values()";
+		String sql="select * from servlet_login_01 where email=?";
+		Member member = null;
 		try {
 			con();
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(0, sql);
+			pstmt.setString(1, email);
+			rs= pstmt.executeQuery();
+			if(rs.next()) {
+				member = new Member();
+			}
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
 			discon();
 		}
-		return null;
+		return member;
 	}
 
 }
