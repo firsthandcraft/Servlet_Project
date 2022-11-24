@@ -48,15 +48,15 @@ public class DaoImpl implements Dao{//Dao인터페이스를 상속
 	public void insert(Member m) {
 		// TODO Auto-generated method stub
 		//dbConnection 1번째 방법으로 실행(conn만)
-		String sql="insert into servlet_login_01 values(?,?,?,?,?)";
+		String sql="insert into servlet_login_01 values(?,?,?,sysdate,?)";
 		try {
 			conn=db.getConnection();
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, m.getEmail());
 			pstmt.setString(2, m.getPwd());
 			pstmt.setString(3, m.getName());
-			pstmt.setString(4, m.getDay());
-			pstmt.setInt(5, m.getGender());
+//			pstmt.setString(4, m.getBirth());
+			pstmt.setString(4, m.getGender());
 			pstmt.executeUpdate();
 		} catch(SQLException e) {//sql의 예외
 			e.printStackTrace();
@@ -74,7 +74,7 @@ public class DaoImpl implements Dao{//Dao인터페이스를 상속
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, m.getPwd());
 			pstmt.setString(2, m.getName());
-			pstmt.setString(3, m.getDay());
+			pstmt.setString(3, m.getBirth());
 			pstmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();

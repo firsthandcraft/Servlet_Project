@@ -1,11 +1,19 @@
 package conntroller;
 
 import java.io.IOException;
+import java.security.Provider.Service;
+
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import model.Member;
+import service.MemberService;
+import service.MemberServiceImpl;
 
 /**
  * Servlet implementation class JoinController
@@ -27,7 +35,7 @@ public class JoinController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request, response);
 	}
 
 	/**
@@ -35,7 +43,20 @@ public class JoinController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		MemberService service= new MemberServiceImpl();
+		String email = request.getParameter("email"); 
+		String pwd = request.getParameter("pwd"); 
+		String name = request.getParameter("name"); 
+		String birth = request.getParameter("birth"); 
+		String gender = request.getParameter("gender"); 
+		Member m = new Member(email,pwd,name,birth,gender);
+		service.joinMember(m);
+		String path = "/member/login.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+		dispatcher.forward(request, response);
+
 	}
 
 }

@@ -1,4 +1,9 @@
 @charset "EUC-KR";
+	@keyframes opacity{
+    0%{opacity: 0.4;}
+    50%{opacity: 0.9;}
+    100%{opacity: 0.3;}}
+	.hide{width:0;height:0;font-size:0;line-height:0;position:absolute;visibility:hidden;}
 	*{box-sizing: border-box;}
 	a{text-decoration:none;}
 	h3{text-align:center;margin-bottom:40px;}
@@ -7,17 +12,23 @@
 	.formWrap{width:350px;margin:0 auto;padding:45px 40px;border:1px solid #dbdbdb;
 	}
 	.formWrap form{width:100%;}
-	.formWrap label{font-size:10px;font-weight:bold;}
+	.formWrap label{font-size:12px;font-weight:bold;}
 	.formWrap input,#userMonth{width:100%;height:36px;margin-bottom:4px; display:block; background-color:#fafafa;border:1px solid#dbdbdb;}
-	.gender{display:flex;}
+	.gender{display:flex;margin:0;}
+	.gender label{display:flex;width:40%;}
+	.gender label span{padding:12px 8px 0 0;}
 	.gender label:nth-child(1){margin-right:10%;}
-	.formWrap input[type=radio]{width:80%;}
+	.formWrap input[type=radio]{width:20px;}
 	.formWrap input:nth-child(1){margin-bottom:6px;}
 	.formWrap input:nth-child(2){margin-bottom:14px;}
-	.formWrap input.submit{background-color:#0094f669;border:none;border-radius:8px;color:#fff;}
+	.formWrap .submit{width:100%;height:36px; background-color:#0094f669;border:none;border-radius:8px;color:#fff;}
 	.birth{display:flex;}
 	.birth label{width:70%;margin:0 5px;}
 	.birth input,.birth select{margin-top:4px;}
+	.Jcheck,.JcheckOK{display:block;margin-bottom:10px;padding-left:18px; position:relative;font-size:10px;color:#d31225;}
+	.Jcheck::before{content:"!";width:14px;height:14px;border-radius:50%;position:absolute;top:0;left:0;background-color:#d31225;font-weight:bold;text-indent:5px; color:#fff;}
+	.JcheckOK{color:#000;}
+	.redLine{box-shadow: inset 0 0 0 1px#e91429;}
 	/**/
 	.or{display:flex;justify-content:space-between;position: relative;margin:16px 0 26px;}
 	.line{position: relative;width: 69px;}
@@ -26,3 +37,4 @@
 	.facebook a{color:#385185;font-weight:bold;}
 	.lost{text-align:center;}
 	.lost a{color: #00376B;}
+	.submit:hover{background-color:#0094f6; animation:opacity 3s ease infinite alternate;}

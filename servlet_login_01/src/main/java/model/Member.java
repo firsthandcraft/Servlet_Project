@@ -4,14 +4,14 @@ public class Member {
 	private String email;
 	private String pwd;
 	private String name;
-	private String day;
-	private int gender;
-	public Member(String email, String pwd, String name, String day, int gender) {
+	private String birth;
+	private String gender;
+	public Member(String email, String pwd, String name, String birth, String gender) {
 		super();
 		this.email = email;
 		this.pwd = pwd;
 		this.name = name;
-		this.day = day;
+		this.birth = birth;
 		this.gender = gender;
 	}
 	public Member() {
@@ -35,23 +35,23 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDay() {
-		return day;
+	public String getBirth() {
+		return birth;
 	}
-	public void setDay(String day) {
-		this.day = day;
+	public void setBirth(String birth) {
+		this.birth = birth;
 	}
-	public int getGender() {
+	public String getGender() {
 		return gender;
 	}
-	public void setGender(int gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 	@Override
 	public String toString() {
-		return "Member [email=" + email + ", pwd=" + pwd + ", name=" + name + ", day=" + day + ", gender=" + gender
+		return "Member [email=" + email + ", pwd=" + pwd + ", name=" + name + ", birth=" + birth + ", gender=" + gender
 				+ "]";
 	}
-
+	
 	
 }
