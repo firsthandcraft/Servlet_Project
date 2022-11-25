@@ -74,7 +74,7 @@ public class DaoImpl implements Dao{//Dao인터페이스를 상속
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, m.getPwd());
 			pstmt.setString(2, m.getName());
-			pstmt.setString(3, m.getBirth());
+		//	pstmt.setDate(3, m.getBirth());
 			pstmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -97,7 +97,6 @@ public class DaoImpl implements Dao{//Dao인터페이스를 상속
 			discon();
 		}
 	}
-	//select rs.get 안넣었으
 	@Override
 	public Member select(String email) {
 		// TODO Auto-generated method stub
@@ -109,7 +108,7 @@ public class DaoImpl implements Dao{//Dao인터페이스를 상속
 			pstmt.setString(1, email);
 			rs= pstmt.executeQuery();
 			if(rs.next()) {
-				member = new Member();
+				member = new Member(rs.getString(1),rs.getString(2),rs.getString(3),rs.getDate(4), rs.getString(5));
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();

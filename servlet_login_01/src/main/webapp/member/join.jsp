@@ -7,7 +7,8 @@
 <meta charset="EUC-KR">
 <title>join</title>
 <link rel="stylesheet" href="../css/login.css">
-<script src="../javascript/joinCheck.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
 </head>
 <body>
 <div class="formWrap">
@@ -16,22 +17,25 @@
 			<h5 class="title">이메일 주소로 가입하기</h5>
 			
 			<label for="userEmail">이메일이 어떻게 되시나요?</label>
-			<input type="text" id ="userEmail" placeholder="이메일을 입력하세요."name="email">
+			<input type="email" id ="userEmail" placeholder="이메일을 입력하세요."name="email">
 			<span class="alertEmail Jcheck hide">이메일을 입력해야합니다.</span>
 			<!-- 잘못된 이메일 주소입니다. example@email.com 형식으로 입력되었는지 확인하세요. -->
 			<!-- 이 이메일은 이미 계정에 연결되어 있습니다. 로그인하세요. -->
 			<label for="useremailCheck">이메일을 확인하세요.</label>
-			<input type="text" id="useremailCheck" class="user" placeholder="이메일을 다시 입력하세요."name="emailCheck" >
-			<span class="alertEmail Jcheck hide">이메일 주소가 일지 하지 않습니다.</span>
+			<input type="email" id="useremailCheck" class="user" placeholder="이메일을 다시 입력하세요."name="emailCheck" >
+			<span class="alertEmailCheck Jcheck hide">이메일 주소가 일지 하지 않습니다.</span>
 			
-			<label for="userPwd">비밀번호를 만드세요.</label>
-			<input type="password" id ="userPwd"placeholder="비밀번호를 만드세요" name="pwd" >
+			<label for="userPwd" class="password">
+				<p>비밀번호를 만드세요.</p>
+				<input type="password" id ="userPwd"placeholder="비밀번호를 만드세요" name="pwd">
+				<span class="material-symbols-outlined" >visibility_off</span><!-- visibility  -->
+			</label>
 			<span class="alertPwd Jcheck hide">비밀번호가 너무 짧습니다.</span>
 			
 			<label for="userName">어떤 사용자의 이름을 사용하시겠어요?</label>
-			<input type="text" id="userName"class="user" placeholder="프로필 이름을 입력하세요."name="name">
+			<input type="text" id="userName"class="user" placeholder="프로필에 표시되는 이름을 입력하세요."name="name">
 			<span class="alertName Jcheck hide nameCheck">프로필에 쓰일 이름을 입력하세요.</span>
-			<span class="JcheckOK nameCheck">프로필에 표시되는 이름입니다.</span>
+			<span class="JcheckOK hide nameCheck">프로필에 표시되는 이름입니다.</span>
 			
 			<label>생년월일이 어떻게 되시나요?</label>
 <!-- 			<div class="birth">
@@ -59,8 +63,8 @@
 			<span class="alertMonth Jcheck hide">태어난 달을 입력하세요.</span>
 			<span class="alertDay Jcheck hide">해달 월 중 유효한 날짜를 입력하세요.</span>
  -->
- 			<label for="userYear">연도<input type="text" id="userYear"class="user" placeholder="YYYY" maxlength="4"name="birth"></label>
- 			
+ 			<label for="userYear"><input type="text" id="userYear"class="user" placeholder="YYMMDD" maxlength="6"name="birth"></label>
+ 			<span class="alertYear Jcheck hide">숫자를 입력하세요.</span>
 			<label>성별이 무엇인가요?</label>
 			<p class="gender">
 				<label><span>남성</span><input type="radio" name="gender" value="male" ></label>
@@ -75,10 +79,8 @@
 			<span>OR</span>
 			<span class="line"></span>
 		</div>
-		<div class="facebook">
-			
-			<p>계정이 있나요?<a href =""> Log in</a><p>
-		</div>
+		<p class="lost">계정이 있나요?<a href ="${pageContext.request.contextPath}/member/login.jsp" style="color:#0095F6"> Log in</a><p>
 		</div>
 </body>
+<script src="../javascript/joinCheck.js" charset="utf-8"></script>
 </html>

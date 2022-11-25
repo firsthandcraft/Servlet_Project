@@ -1,9 +1,8 @@
 package conntroller;
 
 import java.io.IOException;
-import java.security.Provider.Service;
+import java.sql.Date;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -49,9 +48,9 @@ public class JoinController extends HttpServlet {
 		String email = request.getParameter("email"); 
 		String pwd = request.getParameter("pwd"); 
 		String name = request.getParameter("name"); 
-		String birth = request.getParameter("birth"); 
+		
 		String gender = request.getParameter("gender"); 
-		Member m = new Member(email,pwd,name,birth,gender);
+		Member m = new Member(email,pwd,name,null,gender);
 		service.joinMember(m);
 		String path = "/member/login.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);

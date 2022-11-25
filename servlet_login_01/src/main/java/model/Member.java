@@ -1,12 +1,14 @@
 package model;
 
+import java.sql.Date;
+
 public class Member {
 	private String email;
 	private String pwd;
 	private String name;
-	private String birth;
+	private Date birth;
 	private String gender;
-	public Member(String email, String pwd, String name, String birth, String gender) {
+	public Member(String email, String pwd, String name, Date birth, String gender) {
 		super();
 		this.email = email;
 		this.pwd = pwd;
@@ -14,9 +16,7 @@ public class Member {
 		this.birth = birth;
 		this.gender = gender;
 	}
-	public Member() {
-		super();
-	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -35,10 +35,10 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getBirth() {
+	public Date getBirth() {
 		return birth;
 	}
-	public void setBirth(String birth) {
+	public void setBirth(Date birth) {
 		this.birth = birth;
 	}
 	public String getGender() {
