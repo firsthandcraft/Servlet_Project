@@ -21,7 +21,7 @@
 			<span class="alertEmail Jcheck hide">이메일을 입력해야합니다.</span>
 			<!-- 잘못된 이메일 주소입니다. example@email.com 형식으로 입력되었는지 확인하세요. -->
 			<!-- 이 이메일은 이미 계정에 연결되어 있습니다. 로그인하세요. -->
-			<label for="useremailCheck">이메일을 확인하세요.</label>
+			<label for="useremailCheck">이메일을 확인하세요.</label> 
 			<input type="email" id="useremailCheck" class="user" placeholder="이메일을 다시 입력하세요."name="emailCheck" >
 			<span class="alertEmailCheck Jcheck hide">이메일 주소가 일지 하지 않습니다.</span>
 			
