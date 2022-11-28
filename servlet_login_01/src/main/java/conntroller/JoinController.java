@@ -1,7 +1,6 @@
 package conntroller;
 
 import java.io.IOException;
-import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -48,14 +47,13 @@ public class JoinController extends HttpServlet {
 		String email = request.getParameter("email"); 
 		String pwd = request.getParameter("pwd"); 
 		String name = request.getParameter("name"); 
-		
+		String birth = request.getParameter("birth"); 
 		String gender = request.getParameter("gender"); 
-		Member m = new Member(email,pwd,name,null,gender);
+		Member m = new Member(email,pwd,name,birth,gender);
 		service.joinMember(m);
 		String path = "/member/login.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
-
 	}
 
 }

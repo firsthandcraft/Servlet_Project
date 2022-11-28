@@ -6,9 +6,9 @@ public class Member {
 	private String email;
 	private String pwd;
 	private String name;
-	private Date birth;
+	private String birth;
 	private String gender;
-	public Member(String email, String pwd, String name, Date birth, String gender) {
+	public Member(String email, String pwd, String name, String birth, String gender) {
 		super();
 		this.email = email;
 		this.pwd = pwd;
@@ -16,7 +16,9 @@ public class Member {
 		this.birth = birth;
 		this.gender = gender;
 	}
-
+	public Member() {
+		super();
+	}
 	public String getEmail() {
 		return email;
 	}
@@ -35,10 +37,10 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getBirth() {
+	public String getBirth() {
 		return birth;
 	}
-	public void setBirth(Date birth) {
+	public void setBirth(String birth) {
 		this.birth = birth;
 	}
 	public String getGender() {
@@ -52,6 +54,5 @@ public class Member {
 		return "Member [email=" + email + ", pwd=" + pwd + ", name=" + name + ", birth=" + birth + ", gender=" + gender
 				+ "]";
 	}
-	
 	
 }

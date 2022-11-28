@@ -1,6 +1,7 @@
 package conntroller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,25 +43,30 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setContentType("text/html;charset=utf-8");
 		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		MemberService service = new MemberServiceImpl();
 		boolean flag= false;
-		
 		HttpSession session= request.getSession();
-		
 		String email= request.getParameter("email");
 		String pwd= request.getParameter("pwd");
-		
 		Member m = service.findMember(email);//Ã£±â
+		String path="/member/main.jsp";
 		if(m!=null && pwd.equals(m.getPwd())) {
 			session.setAttribute("m", m);
 			session.setAttribute("email", email);
+			//System.out.println("ggggg"+m.getName());
 			flag=true;
+			request.setAttribute("flag", flag);
+		}else {
+			path="/member/login.jsp";
+			
+			request.setAttribute("flag", flag);
 		}
-		session.setAttribute("flag", flag);
-		String path="/member/login.jsp";
+		
+		
 		RequestDispatcher dispatcher=request.getRequestDispatcher(path);
+		
 		if(dispatcher!=null) {
 		 dispatcher.forward(request, response);
 		}
