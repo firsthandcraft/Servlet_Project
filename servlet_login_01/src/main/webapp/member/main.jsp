@@ -20,9 +20,8 @@
         <ul class="list">
             <li class="active"><a href="#"><span class="material-symbols-outlined">home</span>home</a></li>
             <li><a href="#"><span class="material-symbols-outlined">search</span>검색하기</a></li>
-            <li><a href="#"><span class="material-symbols-outlined">
-                library_books
-                </span>라이브러리</a></li>
+            <li><a href="#"><span class="material-symbols-outlined">library_books</span>라이브러리</a></li>
+            <li><a href="${pageContext.request.contextPath}/member/mymusic.jsp"><span class="material-symbols-outlined"><span class="material-symbols-outlined">library_add</span></span>내 음악</a></li>
         </ul>
     </nav><!-- nav -->
     <div class="contentWrap"><!-- contentWrap -->

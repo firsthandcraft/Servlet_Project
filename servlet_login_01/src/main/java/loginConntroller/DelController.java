@@ -1,4 +1,4 @@
-package conntroller;
+package loginConntroller;
 
 import java.io.IOException;
 
@@ -10,21 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.Member;
 import service.MemberService;
 import service.MemberServiceImpl;
 
 /**
- * Servlet implementation class LogoutController
+ * Servlet implementation class DelController
  */
-@WebServlet("/LogoutController")
-public class LogoutController extends HttpServlet {
+@WebServlet("/DelController")
+public class DelController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LogoutController() {
+    public DelController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,11 +41,15 @@ public class LogoutController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-		HttpSession session= request.getSession(false);
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		MemberService service= new MemberServiceImpl();
+		HttpSession session = request.getSession();
+		String email = (String)session.getAttribute("email");
 		session.invalidate();
-		RequestDispatcher dispatcher=request.getRequestDispatcher("/member/login.jsp");
+		service.deleteMember(email);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/member/login.jsp");
 		if(dispatcher !=null) {
 			dispatcher.forward(request, response);
 		}

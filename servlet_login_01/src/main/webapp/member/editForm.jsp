@@ -19,12 +19,7 @@
 			<label for="userEmail">이메일이 어떻게 되시나요?</label>
 			<input type="email" id ="userEmail" placeholder="이메일을 입력하세요."name="email"value="${m.email}">
 			<span class="alertEmail Jcheck hide">이메일을 입력해야합니다.</span>
-			<!-- 잘못된 이메일 주소입니다. example@email.com 형식으로 입력되었는지 확인하세요. -->
-			<!-- 이 이메일은 이미 계정에 연결되어 있습니다. 로그인하세요. -->
-			<label for="useremailCheck">이메일을 확인하세요.</label> 
-			<input type="email" id="useremailCheck" class="user" placeholder="이메일을 다시 입력하세요."name="emailCheck" >
-			<span class="alertEmailCheck Jcheck hide">이메일 주소가 일지 하지 않습니다.</span>
-			
+
 			<label for="userPwd" class="password">
 				<p>비밀번호를 만드세요.</p>
 				<input type="password" id ="userPwd"placeholder="비밀번호를 만드세요" name="pwd"value="${m.pwd}">
@@ -63,7 +58,7 @@
 			<span>OR</span>
 			<span class="line"></span>
 		</div>
-		<p class="lost">계정이 있나요?<a href ="${pageContext.request.contextPath}/member/login.jsp" style="color:#0095F6"> Log in</a><p>
+		<p class="lost">그만 이용하시길 원하세요?<a href ="${pageContext.request.contextPath}/DelController" style="color:#0095F6">탈퇴하기</a><p>
 		</div>
 </body>
 <script src="${pageContext.request.contextPath}/javascript/joinCheck.js" charset="utf-8"></script>

@@ -1,7 +1,6 @@
-package conntroller;
+package loginConntroller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,23 +8,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import model.Member;
 import service.MemberService;
 import service.MemberServiceImpl;
 
 /**
- * Servlet implementation class LoginController
+ * Servlet implementation class EditController
  */
-@WebServlet("/LoginController")
-public class LoginController extends HttpServlet {
+@WebServlet("/EditController")
+public class EditController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginController() {
+    public EditController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,32 +41,21 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-		MemberService service = new MemberServiceImpl();
-		boolean flag= false;
-		HttpSession session= request.getSession();
-		String email= request.getParameter("email");
-		String pwd= request.getParameter("pwd");
-		Member m = service.findMember(email);//Ã£±â
-		String path="/member/main.jsp";
-		if(m!=null && pwd.equals(m.getPwd())) {
-			session.setAttribute("m", m);
-			session.setAttribute("email", email);
-			//System.out.println("ggggg"+m.getName());
-			flag=true;
-			request.setAttribute("flag", flag);
-		}else {
-			path="/member/login.jsp";
-			
-			request.setAttribute("flag", flag);
-		}
-		
-		
-		RequestDispatcher dispatcher=request.getRequestDispatcher(path);
-		
-		if(dispatcher!=null) {
-		 dispatcher.forward(request, response);
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		MemberService service= new MemberServiceImpl();
+		String email = request.getParameter("email"); 
+		String pwd = request.getParameter("pwd"); 
+		String name = request.getParameter("name"); 
+		String birth = request.getParameter("birth"); 
+		String gender = request.getParameter("gender"); 
+		Member m = new Member(email,pwd,name,birth,gender);
+		service.editMember(m);
+		String path = "/member/main.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+		if(dispatcher !=null) {
+			dispatcher.forward(request, response);
 		}
 	}
 

@@ -1,4 +1,4 @@
-@charset "EUC-KR";
+@charset "utf-8";
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -27,9 +27,9 @@ time, mark, audio, video {
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
-/* a ¸µÅ© ÃÊ±âÈ­ */
+/* a ë§í¬ ì´ˆê¸°í™” */
 a {display: block; color: #000; text-decoration: none;}
-/*¹öÆ° ÃÊ±âÈ­*/
+/*ë²„íŠ¼ ì´ˆê¸°í™”*/
 button{background: inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer} 
 ol, ul {list-style: none;}
 /* img */
@@ -37,9 +37,9 @@ img{height: 100%; vertical-align: middle;}
 /* clearfix */
 .clearfix:before, .clearfix:after {display: block; content: '';line-height: 0;}
 .clearfix:after {clear: both;}
-/* IR È¿°ú */
-.ir_pm {display:block; overflow:hidden; font-size:0; line-height:0; text-indent:-9999px;} /* ÀÇ¹ÌÀÖ´Â ÀÌ¹ÌÁöÀÇ ´ëÃ¼ ÅØ½ºÆ®¸¦ Á¦°øÇÏ´Â °æ¿ì(Phark Method) */
-.ir_wa {display:block; overflow:hidden; position:relative; z-index:-1; width:100%; height: 100%;} /* ÀÇ¹ÌÀÖ´Â ÀÌ¹ÌÁöÀÇ ´ëÃ¼ ÅØ½ºÆ®·Î ÀÌ¹ÌÁö°¡ ¾ø¾îµµ ´ëÃ¼ ÅØ½ºÆ®¸¦ º¸¿©ÁÖ°íÀÚ ÇÒ ¶§(WA IR) */
-.ir_so {overflow: hidden; position:absolute; width:0; height:0; line-height:0; text-indent:-9999px;} /* ´ëÃ¼ ÅØ½ºÆ®°¡ ¾Æ´Ñ Á¢±Ù¼ºÀ» À§ÇÑ ¼û±è ÅØ½ºÆ®¸¦ Á¦°øÇÒ ¶§ */
+/* IR íš¨ê³¼ */
+.ir_pm {display:block; overflow:hidden; font-size:0; line-height:0; text-indent:-9999px;} /* ì˜ë¯¸ìˆëŠ” ì´ë¯¸ì§€ì˜ ëŒ€ì²´ í…ìŠ¤íŠ¸ë¥¼ ì œê³µí•˜ëŠ” ê²½ìš°(Phark Method) */
+.ir_wa {display:block; overflow:hidden; position:relative; z-index:-1; width:100%; height: 100%;} /* ì˜ë¯¸ìˆëŠ” ì´ë¯¸ì§€ì˜ ëŒ€ì²´ í…ìŠ¤íŠ¸ë¡œ ì´ë¯¸ì§€ê°€ ì—†ì–´ë„ ëŒ€ì²´ í…ìŠ¤íŠ¸ë¥¼ ë³´ì—¬ì£¼ê³ ì í•  ë•Œ(WA IR) */
+.ir_so {overflow: hidden; position:absolute; width:0; height:0; line-height:0; text-indent:-9999px;} /* ëŒ€ì²´ í…ìŠ¤íŠ¸ê°€ ì•„ë‹Œ ì ‘ê·¼ì„±ì„ ìœ„í•œ ìˆ¨ê¹€ í…ìŠ¤íŠ¸ë¥¼ ì œê³µí•  ë•Œ */
 /* sr_only */
 .sr-only {position: absolute; overflow: hidden; width: 1px; height: 1px; padding: 0; margin: -1px; border: 0; clip: rect(0,0,0,0);}

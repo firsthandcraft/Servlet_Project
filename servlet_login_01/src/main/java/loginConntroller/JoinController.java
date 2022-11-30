@@ -1,4 +1,4 @@
-package conntroller;
+package loginConntroller;
 
 import java.io.IOException;
 

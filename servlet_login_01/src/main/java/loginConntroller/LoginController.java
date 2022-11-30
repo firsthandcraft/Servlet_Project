@@ -1,6 +1,7 @@
-package conntroller;
+package loginConntroller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,16 +16,16 @@ import service.MemberService;
 import service.MemberServiceImpl;
 
 /**
- * Servlet implementation class SearchController
+ * Servlet implementation class LoginController
  */
-@WebServlet("/SearchController")
-public class SearchController extends HttpServlet {
+@WebServlet("/LoginController")
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchController() {
+    public LoginController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -44,16 +45,30 @@ public class SearchController extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-		MemberService service= new MemberServiceImpl();
-		HttpSession session = request.getSession();
-		String email = (String)session.getAttribute("email"); 
-		Member m = service.findMember(email);
-		service.joinMember(m); 
-		request.setAttribute("m", m);
-		String path = "/member/editForm.jsp";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
-		if(dispatcher !=null) {
-		dispatcher.forward(request, response);
+		MemberService service = new MemberServiceImpl();
+		boolean flag= false;
+		HttpSession session= request.getSession();
+		String email= request.getParameter("email");
+		String pwd= request.getParameter("pwd");
+		Member m = service.findMember(email);//Ã£±â
+		String path="/member/main.jsp";
+		if(m!=null && pwd.equals(m.getPwd())) {
+			session.setAttribute("m", m);
+			session.setAttribute("email", email);
+			//System.out.println("ggggg"+m.getName());
+			flag=true;
+			request.setAttribute("flag", flag);
+		}else {
+			path="/member/login.jsp";
+			
+			request.setAttribute("flag", flag);
+		}
+		
+		
+		RequestDispatcher dispatcher=request.getRequestDispatcher(path);
+		
+		if(dispatcher!=null) {
+		 dispatcher.forward(request, response);
 		}
 	}
 

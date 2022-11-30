@@ -68,13 +68,15 @@ public class DaoImpl implements Dao{//Dao인터페이스를 상속
 	@Override
 	public void update(Member m) {
 		// TODO Auto-generated method stub
-		String sql="update servlet_login_01 set pwd=?,name=?,regdate=? where email=?";
+		String sql="update servlet_login_01 set pwd=?,name=?,regdate=?,gender=? where email=?";
 		try {
 			con();
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, m.getPwd());
 			pstmt.setString(2, m.getName());
-		//	pstmt.setDate(3, m.getBirth());
+			pstmt.setString(3, m.getBirth());
+			pstmt.setString(4, m.getGender());
+			pstmt.setString(5, m.getEmail());
 			pstmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -91,6 +93,7 @@ public class DaoImpl implements Dao{//Dao인터페이스를 상속
 			con();
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, email);
+			pstmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
