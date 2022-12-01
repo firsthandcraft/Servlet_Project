@@ -9,7 +9,7 @@ public interface musicDao {
 	void insert(Music m);
 	void update(Music m);
 	void delete(String title);
-	ArrayList<Music> selectAllBySeller(String seller);
+	ArrayList<Music> selectAllBySeller(String s_email);
 	Music select(String Mtitle);
 	ArrayList<Music> selectAll();
 	

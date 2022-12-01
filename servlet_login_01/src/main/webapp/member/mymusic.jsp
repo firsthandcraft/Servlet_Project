@@ -22,9 +22,7 @@
             <li><a href="${pageContext.request.contextPath}/member/main.jsp"><span class="material-symbols-outlined">home</span>home</a></li>
             <li><a href="#"><span class="material-symbols-outlined">search</span>검색하기</a></li>
             <li><a href="#"><span class="material-symbols-outlined">library_books</span>라이브러리</a></li>
-            <li class="active"><a href="#"><span class="material-symbols-outlined"><span class="material-symbols-outlined">
-library_add
-</span></span>내 음악</a></li>
+            <li class="active"><a href="#"><span class="material-symbols-outlined"><span class="material-symbols-outlined">library_add</span></span>내 음악</a></li>
         </ul>
     </nav><!-- nav -->
     <div class="contentWrap"><!-- contentWrap -->
@@ -44,44 +42,35 @@ library_add
         </header><!-- header -->
         
         <main><!-- main -->
-                      <!-- <div class="headImg">
-                <h3>등록</h3>
-                <div><img src="" alt="">앨범이미지</div>
-                <div>앨범 설명</div>
-            </div> -->
-            <!-- 데이터가 없을때 -->
+        <div class="musicList">
                 <h2>
                     <span class="material-symbols-outlined">album</span>
 	                </br> </br>
                     첫 앨범을 등록해보세요
                 </h2>
-                <a class="albumPlus" href="${pageContext.request.contextPath}/member/mymusicEdit.jsp">앨범 등록</a>                    
-            <div class="musicList">
-                <h3>playList</h3>
-                <div class="arrow">
-                    <span class="material-symbols-outlined">add_circle</span>
-                </div>
+                <a class="albumPlus" href="${pageContext.request.contextPath}/member/mymusicInsert.jsp">앨범 등록</a>                    
+
               <!-- 데이터가 있을때 -->
+               <h3>playList</h3>
+                <div class="arrow">
+                    <a href="${pageContext.request.contextPath}/member/mymusicInsert.jsp">                    
+                    	<span class="material-symbols-outlined">add_circle</span>
+                    </a>
+                </div>
                 <div class="listWrap">
                     <ul class="Mcontent">
-                        <li>
-                            <img src="rex.jpg" alt="albumimg">
-                            <p>시간의 지평선</p>
-                            <p>만든사람:</p>                
+                    <c:forEach var="p" items="${musics}">
+						 <li>
+						 <a href="${pageContext.request.contextPath}/minsertController?title=${m.Mtitle}">
+						 	<img src="${m.Mimg}" width="50"height="50" alt="albumimg">
+                            <span>${m.Mtitle}</span>
+                            <small>만든사람: ${m.Mproducer}</small>
+						 </a>  
                         </li>
-                        <li>
-                            <img src="rex.jpg" alt="albumimg">
-                            <p>시간의 지평선</p>
-                            <p>만든사람: </p>
-                        </li>
-                        <li>
-                            <img src="rex.jpg" alt="albumimg">
-                            <p>시간의 지평선</p>
-                            <p>만든사람:</p>                     
-                        </li>
+					</c:forEach>
                     </ul>
                 </div>
-            </div>
+         </div>
         </main><!-- main -->
         </div><!-- contentWrap -->
 </div>

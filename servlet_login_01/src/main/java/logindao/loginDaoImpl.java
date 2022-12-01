@@ -77,8 +77,9 @@ public class loginDaoImpl implements loginDao{//Dao인터페이스를 상속
 			pstmt.setString(2, m.getName());
 			pstmt.setString(3, m.getBirth());
 			pstmt.setString(4, m.getGender());
-			pstmt.setString(5, m.getEmail());
-			pstmt.setString(6, m.getMembershipPlan());
+			pstmt.setString(5, m.getMembershipPlan());
+			pstmt.setString(6, m.getEmail());
+
 			pstmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();

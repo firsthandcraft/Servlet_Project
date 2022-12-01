@@ -1,10 +1,13 @@
 @charset "utf-8";
 /* 앨범등록 */
-@keyframes scale{
-    10%{transform: scale(1.1);}
-    75%{transform: scale(0.9);}
-}
-h2{margin-top:180px; text-align:center;}
-h2 span.material-symbols-outlined{font-size:70px;}
-.albumPlus{width: 150px;margin:26px auto 0;padding:10px 30px;display:block;border-radius:20px;background:#fff;color:#000;text-align:center;font-weight:bold;}
-.albumPlus:hover{animation:scale 0.5s linear normal 1 ;}
+ 
+    /*  */
+    main{margin-top:100px;}
+    .enrollWrap{width:100%;display:flex;justify-content:center;}
+    .enrollWrap form{width:60%;}
+    .albumContent{width:100%;padding:0;margin:0;display:flex;flex-direction: column;}
+    .albumContent li{width:100%;margin:6px 0;  }
+    .albumContent li input,.enrollWrap textarea{width:86%; display:block; padding:8px 32px;background-color:#414141;border:0; border-radius: 4px;}
+    .albumContent img{width:300px;}
+    .albumContent li input[type="file"]{padding-left:0; background-color:#242424;}
+    .albumContent li input[type="button"]{width:94%;}

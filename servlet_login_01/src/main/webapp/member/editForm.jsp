@@ -17,7 +17,7 @@
 			<h5 class="title">이메일 주소 수정</h5>
 			
 			<label for="userEmail">이메일이 어떻게 되시나요?</label>
-			<input type="email" id ="userEmail" placeholder="이메일을 입력하세요."name="email"value="${m.email}">
+			<input type="email" id ="userEmail" placeholder="이메일을 입력하세요."name="email"value="${m.email}" readonly>
 			<span class="alertEmail Jcheck hide">이메일을 입력해야합니다.</span>
 
 			<label for="userPwd" class="password">
@@ -49,7 +49,8 @@
 				</p>
 			</c:if>
 			<span class=" Jcheck hide">성별을 선택하세요.</span>
-			
+			<label>요금제</label>
+			<input type="text" readonly name="MembershipPlan" value="${m.membershipPlan}">
 			<input type="button" class="submit" value="edit" onClick="emptyCheck(this.form)">
 			<input type="button" class="reset" value="reset">
 		</form>
@@ -61,6 +62,6 @@
 		<p class="lost">그만 이용하시길 원하세요?<a href ="${pageContext.request.contextPath}/DelController" style="color:#0095F6">탈퇴하기</a><p>
 		</div>
 </body>
-<script src="${pageContext.request.contextPath}/javascript/joinCheck.js" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/javascript/MemberEditCheck.js" charset="utf-8"></script>
 
 </html>

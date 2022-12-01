@@ -31,7 +31,7 @@
 	.JcheckOK{color:#000;}
 	.redLine{box-shadow: inset 0 0 0 1px#e91429;}
 	.password{position:relative;}
-	.password .material-symbols-outlined{position:absolute;top:24px;right:10px;}
+	.password .material-symbols-outlined{z-index:100; position:absolute;top:24px;right:10px;}
 	/**/
 	.or{display:flex;justify-content:space-between;position: relative;margin:16px 0 26px;}
 	.line{position: relative;width: 69px;}

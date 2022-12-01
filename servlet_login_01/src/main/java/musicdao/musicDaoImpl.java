@@ -45,7 +45,7 @@ public class musicDaoImpl implements musicDao{
 
 
 	@Override
-	public ArrayList<Music> selectAllBySeller(String seller) {
+	public ArrayList<Music> selectAllBySeller(String s_email) {
 		//
 		// TODO Auto-generated method stub
 		String sql="select * from servlet_login_01_album where seller=?";
@@ -53,10 +53,10 @@ public class musicDaoImpl implements musicDao{
 		try {
 			con();
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, seller);
+			pstmt.setString(1, s_email);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
-				lists.add(new Music(rs.getString(1),rs.getDate(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)));
+				lists.add(new Music(rs.getString(1),rs.getDate(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7)));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -76,7 +76,7 @@ public class musicDaoImpl implements musicDao{
 			pstmt.setString(1, Mtitle);
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
-				music = new Music(rs.getString(1),rs.getDate(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
+				music = new Music(rs.getString(1),rs.getDate(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -97,7 +97,7 @@ public class musicDaoImpl implements musicDao{
 			pstmt=conn.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
-				music =new Music(rs.getString(1),rs.getDate(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
+				music =new Music(rs.getString(1),rs.getDate(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7));
 				list.add(music);
 			}
 		}catch(SQLException e) {
@@ -110,16 +110,16 @@ public class musicDaoImpl implements musicDao{
 	@Override
 	public void insert(Music m) {
 		// TODO Auto-generated method stub
-		String sql="insert into servlet_login_01_album values(?,sysdate,?,?,?,?)";
+		String sql="insert into servlet_login_01_album values(?,sysdate,?,?,?,?,?)";
 		try {
 			con();
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, m.getMtitle());
-			//pstmt.setDate(2, m.getMdate());
 			pstmt.setString(2, m.getMproducer());
 			pstmt.setString(3, m.getMtext());
 			pstmt.setString(4, m.getMimg());
-			pstmt.setString(5, m.getSeller());
+			pstmt.setString(5, m.getS_email());
+			pstmt.setString(6, m.getMseller());
 			pstmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -134,12 +134,11 @@ public class musicDaoImpl implements musicDao{
 		try {
 			con();
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, m.getMtitle());
 			//pstmt.setDate(2, m.getMdate());
-			pstmt.setString(2, m.getMproducer());
-			pstmt.setString(3, m.getMtext());
-			pstmt.setString(4, m.getMimg());
-			pstmt.setString(5, m.getSeller());
+			pstmt.setString(1, m.getMproducer());
+			pstmt.setString(2, m.getMtext());
+			pstmt.setString(3, m.getMimg());
+			pstmt.setString(4, m.getMtitle());
 			pstmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
