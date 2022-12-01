@@ -49,7 +49,8 @@ public class JoinController extends HttpServlet {
 		String name = request.getParameter("name"); 
 		String birth = request.getParameter("birth"); 
 		String gender = request.getParameter("gender"); 
-		Member m = new Member(email,pwd,name,birth,gender);
+		String MembershipPlan = request.getParameter("MembershipPlan"); 
+		Member m = new Member(email,pwd,name,birth,gender,MembershipPlan);
 		service.joinMember(m);
 		String path = "/member/login.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);

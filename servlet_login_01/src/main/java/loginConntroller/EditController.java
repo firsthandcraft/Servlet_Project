@@ -49,8 +49,9 @@ public class EditController extends HttpServlet {
 		String pwd = request.getParameter("pwd"); 
 		String name = request.getParameter("name"); 
 		String birth = request.getParameter("birth"); 
-		String gender = request.getParameter("gender"); 
-		Member m = new Member(email,pwd,name,birth,gender);
+		String gender = request.getParameter("gender");
+		String MembershipPlan= request.getParameter("MembershipPlan");
+		Member m = new Member(email,pwd,name,birth,gender,MembershipPlan);
 		service.editMember(m);
 		String path = "/member/main.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);

@@ -1,14 +1,14 @@
 package service;
 
-import dao.Dao;
-import dao.DaoImpl;
+import logindao.loginDao;
+import logindao.loginDaoImpl;
 import model.Member;
 
 public class MemberServiceImpl implements MemberService {
 
-	private Dao dao;
+	private loginDao dao;
 	public MemberServiceImpl() {
-		this.dao=new DaoImpl();
+		this.dao=new loginDaoImpl();
 	}
 	@Override
 	public void joinMember(Member m) {

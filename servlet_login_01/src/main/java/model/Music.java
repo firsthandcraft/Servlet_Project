@@ -1,16 +1,22 @@
 package model;
 
+import java.sql.Date;
+
 public class Music {
 	private String Mtitle; 
-	private String Mname; 
+	private Date Mdate;
+	private String Mproducer; 
 	private String Mtext; 
-	private String img;
-	public Music(String mtitle, String mname, String mtext, String img) {
+	private String Mimg;
+	private String seller;
+	public Music(String mtitle, Date mdate, String mproducer, String mtext, String mimg, String seller) {
 		super();
 		Mtitle = mtitle;
-		Mname = mname;
+		Mdate = mdate;
+		Mproducer = mproducer;
 		Mtext = mtext;
-		this.img = img;
+		Mimg = mimg;
+		this.seller = seller;
 	}
 	public Music() {
 		super();
@@ -21,11 +27,17 @@ public class Music {
 	public void setMtitle(String mtitle) {
 		Mtitle = mtitle;
 	}
-	public String getMname() {
-		return Mname;
+	public Date getMdate() {
+		return Mdate;
 	}
-	public void setMname(String mname) {
-		Mname = mname;
+	public void setMdate(Date mdate) {
+		Mdate = mdate;
+	}
+	public String getMproducer() {
+		return Mproducer;
+	}
+	public void setMproducer(String mproducer) {
+		Mproducer = mproducer;
 	}
 	public String getMtext() {
 		return Mtext;
@@ -33,16 +45,21 @@ public class Music {
 	public void setMtext(String mtext) {
 		Mtext = mtext;
 	}
-	public String getImg() {
-		return img;
+	public String getMimg() {
+		return Mimg;
 	}
-	public void setImg(String img) {
-		this.img = img;
+	public void setMimg(String mimg) {
+		Mimg = mimg;
+	}
+	public String getSeller() {
+		return seller;
+	}
+	public void setSeller(String seller) {
+		this.seller = seller;
 	}
 	@Override
 	public String toString() {
-		return "Music [Mtitle=" + Mtitle + ", Mname=" + Mname + ", Mtext=" + Mtext + ", img=" + img + "]";
-	} 
-
-	
+		return "Music [Mtitle=" + Mtitle + ", Mdate=" + Mdate + ", Mproducer=" + Mproducer + ", Mtext=" + Mtext
+				+ ", Mimg=" + Mimg + ", seller=" + seller + "]";
+	}
 }
