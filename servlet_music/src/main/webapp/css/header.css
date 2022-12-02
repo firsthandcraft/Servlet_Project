@@ -1,0 +1,22 @@
+@charset "utf-8";
+@keyframes rotate{
+    0%{rotate:180deg;}
+    100%{rotate:0deg;}
+}
+@keyframes rotateReverse{
+    0%{rotate:-180deg;}
+    100%{rotate:0deg;}
+}
+/*header*/
+header{z-index:600;background-color:#000;width:100%;position:fixed;top:0;display:flex;justify-content:space-between;padding:10px 20px;}
+.profile{position:relative;}
+header h4{max-width:200px;display:flex;justify-content: space-between;align-items: center;background:#282828;border-radius:23px;}
+header h4 span:nth-child(1){margin-right:10px;font-size:32px;}
+header h4 span:nth-child(2){margin-left:10px;}
+header .profileList{width:190px;position:absolute;background-color:#282828;right:4px;bottom:-130px;
+padding:0px;}
+.rotate{animation:rotate 0.3s linear normal 1 ;transform:rotate(180deg);}
+.rotateReverse{animation:rotateReverse 0.3s linear normal 1 ;transform:rotate(0deg);}
+header .profileList li{padding:10px;}
+header .profileList li a{display:flex;justify-content:space-between;align-items:center;color:#fff;}
+header .profileList li:hover{background-color:hsla(0,0%,100%,.1);}
