@@ -24,12 +24,25 @@
 		email varchar2(80)  primary key, 
 		password  varchar2(20) not null, 
 		name varchar2(20) not null,
-		regdate date,
-		gender number
+		birth date,
+		gender varchar2(30),
+		membershipPlan varchar2(20) not null
 		);
 		select * from servlet_login_01;
 	</p>
 	<hr>
+	<p>drop table servlet_music_product; 
+		create table servlet_music_product(
+		p_title varchar2(500)  primary key, 
+		p_date  date, 
+		p_producer varchar2(100),
+		p_text varchar2(500),
+		p_img varchar2(500),
+		p_email varchar2(500),
+		p_seller varchar2(500)
+		);
+		select * from servlet_music_product;		
+	</p>
 	<h4>로그인, 회원가입</h4>
 	<p></p>
 	

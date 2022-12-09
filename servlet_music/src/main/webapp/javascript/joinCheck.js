@@ -32,7 +32,28 @@
 		 		alertEmail.classList.remove('hide');
 		 		alertEmail.innerHTML=" 잘못된 이메일 주소입니다. example@email.com 형식으로 입력되었는지 확인하세요.";
 			}
-		}	
+			//이메일 중복체크
+			
+			var email =userEmail.value();
+			var data="email="+email;
+			alert(data);
+			$.ajax({
+				type:"GET",
+				url:"/loginController/EmailDoubleCheckController",
+				data:data,
+				success:function(data){
+					console.log(data);
+					$("#useremailCheck").text("이미 있는 계정입니다.");
+				},
+				error:function(){
+					console.log("이메일 중복체크 error");
+				}
+			});
+			if(userEmail.value){
+				
+			}
+		}
+			
 	 }
 	//이메일 일치 여부
 	useremailCheck.onblur= function(){

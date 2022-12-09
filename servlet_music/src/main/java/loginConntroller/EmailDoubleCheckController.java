@@ -15,16 +15,16 @@ import service.MemberService;
 import service.MemberServiceImpl;
 
 /**
- * Servlet implementation class SearchController
+ * Servlet implementation class EmailDoubleCheckController
  */
-@WebServlet("/SearchController")
-public class SearchController extends HttpServlet {
+@WebServlet("/EmailDoubleCheckController")
+public class EmailDoubleCheckController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchController() {
+    public EmailDoubleCheckController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -48,15 +48,13 @@ public class SearchController extends HttpServlet {
 		HttpSession session = request.getSession();
 		String email = (String)session.getAttribute("email"); 
 		Member m = service.findMember(email);
-		
-		
-		service.joinMember(m); 
+		String text=(m==null&&email.isEmpty())? "중복 또는 공백":"사용가능" ;
+
 		request.setAttribute("m", m);
-		String path = "/member/editForm.jsp";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
-		if(dispatcher !=null) {
+		String path="/json/EmailDoublieCheck.jsp";
+		RequestDispatcher dispatcher =request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
-		}
+		
 	}
 
 }
