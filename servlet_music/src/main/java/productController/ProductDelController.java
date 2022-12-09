@@ -53,6 +53,7 @@ public class ProductDelController extends HttpServlet {
 		String arr[]=p.getP_img().split("/");
 		String fname=arr[arr.length-1];//배열이 0부터 들어가게
 		File f= new File(uploadPath+fname);
+		f.delete();
 		String path = "/servlet_music/ProductListController";
 		response.sendRedirect(path);
 	}
