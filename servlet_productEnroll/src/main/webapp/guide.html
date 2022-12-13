@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>guide</title>
+</head>
+<body>
+	<h3>코드 작성법</h3>
+	<hr>
+	<h4>상품리스트를 db에서 불러오고 카데고리 별로 상품을 등록하는 기능</h4>
+	<p>생성 :New Dynamic Web Project </p>
+	<p>targetruntime : tomcat 9.0
+	   Dynamic web modeul version : 4.0</p>
+	<hr>
+	<h4>사용언어</h4>
+	<p>jsp=>EL,JSTL</p>
+	<p>servlet</p>
+	<p>java</p>
+	<p>ajax</p>
+	<p>json</p>
+	<p>db - oracledb 버전</p>
+	<hr>
+	
+	<h4>DB</h4>
+	<p>drop table servlet_login_01; 
+		create table servlet_login_01(
+		email varchar2(80)  primary key, 
+		password  varchar2(20) not null, 
+		name varchar2(20) not null,
+		birth date,
+		gender varchar2(30),
+		membershipPlan varchar2(20) not null
+		);
+		select * from servlet_login_01;
+	</p>
+	<hr>
+	<p>drop table servlet_music_product; 
+		create table servlet_music_product(
+		p_title varchar2(500)  primary key, 
+		p_date  date, 
+		p_producer varchar2(100),
+		p_text varchar2(500),
+		p_img varchar2(500),
+		p_email varchar2(500),
+		p_seller varchar2(500)
+		);
+		select * from servlet_music_product;		
+	</p>
+	<h4>로그인, 회원가입</h4>
+	<p></p>
+	
+	
+	
+	<p>등록, 로그인</p>
+	
+	
+	
+	
+	
+	<small>by handcraft</small>
+</body>
+</html>
