@@ -35,38 +35,17 @@
                 <div class="listWrap">
                     <ul class="Acontent">
                         <li>
-                            <img src="rex.jpg" alt="artistimg">
+                            <img src="" alt="artistimg">
                             <p>악동뮤지션</p>    
                         </li>
                         <li>
-                            <img src="ariana.jpg" alt="artistimg">
+                            <img src="" alt="artistimg">
                             <p>ff</p>    
                         </li>
                         <li>
-                            <img src="rex.jpg" alt="artistimg">
+                            <img src="" alt="artistimg">
                             <p>rr</p>    
-                        </li>
-                        <li>
-                            <img src="ariana.jpg" alt="artistimg">
-                            <p>아델</p>    
-                        </li>
-             
-                        <li>
-                            <img src="rex.jpg" alt="artistimg">
-                            <p>아e델</p>    
-                        </li>
-                        <li>
-                            <img src="ariana.jpg" alt="artistimg">
-                            <p>dd</p>    
-                        </li>
-                        <li>
-                            <img src="Avril Lavigne.jpg" alt="artistimg">
-                            <p>ss</p>    
-                        </li>
-                        <li>
-                            <img src="Avril Lavigne.jpg" alt="artistimg">
-                            <p>aa</p>    
-                        </li>
+                        </li>          
                     </ul>
                 </div>
             </div>         
@@ -79,14 +58,32 @@
                 <div class="listWrap">
                     <ul class="Mcontent">
                         <li>
-                            <img src="rex.jpg" alt="albumimg">
+                            <img src="" alt="albumimg">
                             <div>
                                 <p>시간의 지평선</p>
                                 <p>윤하</p>
                                 <p>3:59</p>
                             </div>
-                            
                         </li>
+                        <li>
+                            <img src="" alt="albumimg">
+                            <div>
+                                <p>시간의 지평선</p>
+                                <p>윤하</p>
+                                <p>3:59</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="" alt="albumimg">
+                            <div>
+                                <p>시간의 지평선</p>
+                                <p>윤하</p>
+                                <p>3:59</p>
+                            </div>
+                        </li>
+                        <c:if test="">
+                        
+                        </c:if>
                     </ul>
                 </div>
             </div>

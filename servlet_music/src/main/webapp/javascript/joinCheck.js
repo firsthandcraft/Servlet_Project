@@ -35,15 +35,11 @@
 						url:"/servlet_music/EmailDoubleCheckController",
 						data:data,
 						success:function(data){
-							console.log("data :::"+data);
-							var data2='{"email":"","pwd":"","name":"","birth":"","gender":"","membershipPlan":""};';
-							console.log("data2 :::"+data2);
-							if(data==data2){
-							
-							} else{
+							let a=$.parseJSON(data);
+							if(a.flag!="false"){
 								$(".alertEmail").text("이미 있는 계정입니다.");
-							$(".alertEmail").removeClass('hide');
-							}
+								$(".alertEmail").removeClass('hide');
+							}						
 						},
 						error:function(){
 							console.log("이메일 중복체크 error");
