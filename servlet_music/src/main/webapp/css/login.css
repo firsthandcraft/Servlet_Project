@@ -7,13 +7,14 @@
 	*{box-sizing: border-box;}
 	a{text-decoration:none;}
 	h3{margin-bottom:40px;text-align:center;font-weight:600;}
+	h5{margin-bottom:30px;font-size:12px;}
 	.title{text-align:center;}
 	/**/
-	.formWrap{width:350px;margin:20px auto;padding:45px 40px;border:1px solid #dbdbdb;
+	.formWrap{width:350px;margin:20px auto;padding:45px 40px;border:1px solid #757575;
 	}
 	.formWrap form{width:100%;}
-	.formWrap label{font-size:12px;font-weight:bold;}
-	.formWrap input,#userMonth{width:100%;height:36px;margin-bottom:4px;padding:0 10px;display:block; background-color:#fafafa;border:1px solid#dbdbdb;}
+	.formWrap label,.formWrap label p,.gender label span{font-size:12px;font-weight:bold;color:#dbdbdb;}
+	.formWrap input,#userMonth{width:100%;height:36px;margin-bottom:4px;padding:0 10px;display:block;background-color:#242424;border:1px solid#757575;color:#fff;}
 	.gender{display:flex;margin:0;}
 	.gender label{display:flex;width:40%;}
 	.gender label span{padding:12px 8px 0 0;}

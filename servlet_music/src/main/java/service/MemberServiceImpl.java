@@ -45,5 +45,10 @@ public class MemberServiceImpl implements MemberService {
 		}
 		return false;
 	}
+	@Override
+	public void pwdEditMember(Member m) {
+		// TODO Auto-generated method stub
+		dao.pwdUpdate(m);
+	}
 
 }

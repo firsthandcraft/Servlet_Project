@@ -67,7 +67,7 @@ public class MemberDaoImpl implements MemberDao{
 	@Override
 	public void update(Member m) {
 		// TODO Auto-generated method stub
-		String sql="update servlet_music_member set pwd=?,name=?,birth=?,gender=?,MembershipPlan=? where email=?";
+		String sql="update servlet_music_member set password=?,name=?,birth=?,gender=?,MembershipPlan=? where email=?";
 		try {
 			con();
 			pstmt=conn.prepareStatement(sql);
@@ -122,6 +122,22 @@ public class MemberDaoImpl implements MemberDao{
 		}
 		return null;
 	
+	}
+	@Override
+	public void pwdUpdate(Member m) {
+		// TODO Auto-generated method stub
+		String sql="update servlet_music_member set password=? where email=?";
+		try {
+			con();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, m.getPwd());
+			pstmt.setString(2, m.getEmail());
+			pstmt.executeUpdate();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			discon();
+		}
 	}
 
 

@@ -14,10 +14,8 @@
 	const alertYear= document.querySelector('.alertYear');
 	const alertMonth= document.querySelector('.alertMonth');
 	const alertDay= document.querySelector('.alertDay');
-	
-	//아이디 중복 체크
-	
-	
+			
+
 	//공백 체크
 	userEmail.onblur= function(){
 	 	if(userEmail.value==""){
@@ -27,31 +25,41 @@
 		} 	 else if(userEmail.value !="") {
 			userEmail.classList.remove('redLine');
 			alertEmail.classList.add('hide');
-			if(!userEmail.value.includes('@')){
+			if(userEmail.value.includes('@')){
+				$(function(){
+						var email =$("#userEmail").val();
+						var data="email="+email;
+						//alert(data);
+						$.ajax({
+						type:"POST",
+						url:"/servlet_music/EmailDoubleCheckController",
+						data:data,
+						success:function(data){
+							console.log("data :::"+data);
+							var data2='{"email":"","pwd":"","name":"","birth":"","gender":"","membershipPlan":""};';
+							console.log("data2 :::"+data2);
+							if(data==data2){
+							
+							} else{
+								$(".alertEmail").text("이미 있는 계정입니다.");
+							$(".alertEmail").removeClass('hide');
+							}
+						},
+						error:function(){
+							console.log("이메일 중복체크 error");
+						}
+						});
+					
+					});
+				
+				//
+			} else{
 				userEmail.classList.add('redLine');
 		 		alertEmail.classList.remove('hide');
 		 		alertEmail.innerHTML=" 잘못된 이메일 주소입니다. example@email.com 형식으로 입력되었는지 확인하세요.";
+				//
 			}
-			//이메일 중복체크
-			
-			var email =userEmail.value();
-			var data="email="+email;
-			alert(data);
-			$.ajax({
-				type:"GET",
-				url:"/loginController/EmailDoubleCheckController",
-				data:data,
-				success:function(data){
-					console.log(data);
-					$("#useremailCheck").text("이미 있는 계정입니다.");
-				},
-				error:function(){
-					console.log("이메일 중복체크 error");
-				}
-			});
-			if(userEmail.value){
-				
-			}
+		
 		}
 			
 	 }

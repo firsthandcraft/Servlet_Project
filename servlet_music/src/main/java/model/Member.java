@@ -6,6 +6,10 @@ public class Member {
 	private String email;
 	private String pwd;
 	private String name;
+	public Member(String pwd) {
+		super();
+		this.pwd = pwd;
+	}
 	private String birth;
 	private String gender;
 	private String MembershipPlan;

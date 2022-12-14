@@ -8,4 +8,5 @@ public interface MemberService {
 	void deleteMember(String email);
 	Member findMember(String email);
 	boolean login(String email,String pwd);
+	void pwdEditMember(Member m);
 }

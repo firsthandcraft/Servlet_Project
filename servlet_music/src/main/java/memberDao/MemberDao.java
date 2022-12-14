@@ -7,4 +7,5 @@ public interface MemberDao {
 	void update (Member m);
 	void delete (String email);
 	Member select(String email);
+	void pwdUpdate (Member m);
 }

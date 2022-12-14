@@ -45,12 +45,13 @@ public class EmailDoubleCheckController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		MemberService service= new MemberServiceImpl();
-		HttpSession session = request.getSession();
-		String email = (String)session.getAttribute("email"); 
+		System.out.println("이메일 중복확인 controller 들어감");
+		String email = request.getParameter("email"); 
 		Member m = service.findMember(email);
-		String text=(m==null&&email.isEmpty())? "중복 또는 공백":"사용가능" ;
-
-		request.setAttribute("m", m);
+		System.out.println("m:"+m);
+		if(m!=null) {
+			request.setAttribute("m", m);
+		}
 		String path="/json/EmailDoublieCheck.jsp";
 		RequestDispatcher dispatcher =request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);

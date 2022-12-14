@@ -1,3 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-{"email":"${m.email}","password":"${m.password}","name":"${m.name}","birth":"${m.birth}","gender":"${m.gender}","membershipPlan":"${m.membershipPlan}"};
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+{"email":"${m.email}","pwd":"${m.pwd}","name":"${m.name}","birth":"${m.birth}","gender":"${m.gender}","membershipPlan":"${m.membershipPlan}"};
