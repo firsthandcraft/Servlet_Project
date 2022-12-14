@@ -56,35 +56,17 @@
                     <span class="material-symbols-outlined">chevron_right</span>
                 </div>
                 <div class="listWrap">
-                    <ul class="Mcontent">
-                        <li>
-                            <img src="" alt="albumimg">
-                            <div>
-                                <p>시간의 지평선</p>
-                                <p>윤하</p>
-                                <p>3:59</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="" alt="albumimg">
-                            <div>
-                                <p>시간의 지평선</p>
-                                <p>윤하</p>
-                                <p>3:59</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="" alt="albumimg">
-                            <div>
-                                <p>시간의 지평선</p>
-                                <p>윤하</p>
-                                <p>3:59</p>
-                            </div>
-                        </li>
-                        <c:if test="">
-                        
-                        </c:if>
-                    </ul>
+                    <ul class="content">
+						<c:forEach var="p" items="${products}">
+							<li>
+								<a href="${pageContext.request.contextPath}/ProductSearchController?p_title=${p.p_title}">
+									<img src="${p.p_img}"alt="albumimg">
+									<span>${p.p_title}</span>
+									<span><small>만든사람: ${p.p_producer}</small></span>
+								</a>  
+							</li>
+						</c:forEach>
+		            </ul>
                 </div>
             </div>
         </main><!-- main -->

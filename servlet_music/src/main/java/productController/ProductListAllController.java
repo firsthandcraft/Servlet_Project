@@ -16,16 +16,16 @@ import service.ProductService;
 import service.ProductServiceImpl;
 
 /**
- * Servlet implementation class ProductListController
+ * Servlet implementation class ProductListAllController
  */
-@WebServlet("/ProductListController")
-public class ProductListController extends HttpServlet {
+@WebServlet("/ProductListAllController")
+public class ProductListAllController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProductListController() {
+    public ProductListAllController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,7 +36,6 @@ public class ProductListController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doPost(request, response);
-		
 	}
 
 	/**
@@ -48,11 +47,8 @@ public class ProductListController extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		ProductService ProductService = new ProductServiceImpl();
 		HttpSession session = request.getSession(false);
-		String p_email=(String)session.getAttribute("email");
-		ArrayList<Product> products= ProductService.findAllByP_email(p_email);
+		ArrayList<Product> products= ProductService.findAll();
 		request.setAttribute("products", products);
-		System.out.println("-> products :" +products);
-		System.out.println("-> s_email :" +p_email);
 		String path = "/product/productlist.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
