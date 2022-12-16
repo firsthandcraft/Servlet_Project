@@ -9,9 +9,9 @@
 .Acontent li:hover,.Mcontent li:hover{background-color:#363636;  transition: background-color .3s ease;color:rgba(222, 222, 222, 1);}
 .Acontent li img{border-radius:50%;}
 .Acontent p{font-weight:bold; text-align:center;}
-.mList_title{display:flex;justify-content:space-between;}
-.mList_title h3{position:relative;}
-.mList_title h3 span{position:absolute;right:-60px;top:15px;font-size:14px;}
+.List_title{display:flex;justify-content:space-between;margin-bottom:30px;}
+.List_title h3{position:relative;}
+.List_title h3 span{position:absolute;right:-60px;top:15px;font-size:14px;}
 .Mcontent li div{display:flex;justify-content:space-between;}
 .musicList{padding:0 16px;}
 .arrow{text-align: right;}

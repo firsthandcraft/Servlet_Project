@@ -28,10 +28,12 @@
 
         <main><!-- main -->
             <div class="artistList">
-            	 <h3>${m.name}님을 위한 Artist</h3>
-                <div class="arrow">
-                    <span class="material-symbols-outlined leftBTN">chevron_left</span>
-                    <span class="material-symbols-outlined rightBTN">chevron_right</span>
+            	<div class="List_title">
+	            	 <h3>${m.name}님을 위한 Artist</h3>
+	                <div class="arrow">
+	                    <span class="material-symbols-outlined leftBTN">chevron_left</span>
+	                    <span class="material-symbols-outlined rightBTN">chevron_right</span>
+	                </div>
                 </div>
                 <div class="listWrap">
                     <ul class="Acontent">
@@ -51,7 +53,7 @@
                 </div>
             </div>         
             <div class="musicList">
-            	<div class="mList_title">
+            	<div class="List_title">
 	                <h3>playList<span><a href="#">더보기</a></span></h3>
 	                <div class="arrow">
 	                    <span class="material-symbols-outlined leftBTN" >chevron_left</span>

@@ -15,5 +15,5 @@ h2 span.material-symbols-outlined{font-size:70px;}
 .content li{width:24%;max-width:200px;margin:0 4px;padding:10px;border:0;border-radius:10px;}
 .content li:hover{background-color:#363636;  transition:background-color .3s ease;color:rgba(222, 222, 222, 1);}
 
-.content li span{display:flex;font-size:18px;}
+.content li span{display:block;font-size:18px;text-overflow:ellipsis;white-space:nowrap;word-break:break-all;overflow:hidden;}
 .content li small{font-size:11px;color: rgba(222, 222, 222, 0.6);}
