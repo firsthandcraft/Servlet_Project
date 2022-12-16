@@ -51,7 +51,7 @@ public class LoginController extends HttpServlet {
 		String email= request.getParameter("email");
 		String pwd= request.getParameter("pwd");
 		Member m = service.findMember(email);//Ã£±â
-		String path="/common/main.jsp";
+		String path="/ProductListAllController";
 		if(m!=null && pwd.equals(m.getPwd())) {
 			session.setAttribute("m", m);
 			session.setAttribute("email", email);

@@ -53,7 +53,7 @@ public class EditController extends HttpServlet {
 		String MembershipPlan= request.getParameter("MembershipPlan");
 		Member m = new Member(email,pwd,name,birth,gender,MembershipPlan);
 		service.editMember(m);
-		String path = "/common/main.jsp";
+		String path = "/ProductListAllController";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		if(dispatcher !=null) {
 			dispatcher.forward(request, response);

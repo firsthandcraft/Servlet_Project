@@ -14,6 +14,7 @@
 <meta charset="utf-8">
 <title>main</title>
 </head>
+<!-- 로그인이 아닐 경우 넣기  -->
 <body>
 
 <div class="Wrap">
@@ -27,7 +28,7 @@
 
         <main><!-- main -->
             <div class="artistList">
-                <h3>${m.name}님을 위한 뮤지션</h3>
+            	 <h3>${m.name}님을 위한 Artist</h3>
                 <div class="arrow">
                     <span class="material-symbols-outlined leftBTN">chevron_left</span>
                     <span class="material-symbols-outlined rightBTN">chevron_right</span>
@@ -50,13 +51,15 @@
                 </div>
             </div>         
             <div class="musicList">
-                <h3>playList</h3>
-                <div class="arrow">
-                    <span class="material-symbols-outlined">chevron_left</span>
-                    <span class="material-symbols-outlined">chevron_right</span>
+            	<div class="mList_title">
+	                <h3>playList<span><a href="#">더보기</a></span></h3>
+	                <div class="arrow">
+	                    <span class="material-symbols-outlined leftBTN" >chevron_left</span>
+	                    <span class="material-symbols-outlined rightBTN">chevron_right</span>
+	                </div>
                 </div>
                 <div class="listWrap">
-                    <ul class="content">
+                    <ul class="Mcontent">
 						<c:forEach var="p" items="${products}">
 							<li>
 								<a href="${pageContext.request.contextPath}/ProductSearchController?p_title=${p.p_title}">

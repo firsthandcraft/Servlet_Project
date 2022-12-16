@@ -28,6 +28,7 @@ time, mark, audio, video {
     list-style:none;
 }
 body{background-color:#242424;margin:0;}
+main{padding:0 30px;}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
 /* a 링크 초기화 */

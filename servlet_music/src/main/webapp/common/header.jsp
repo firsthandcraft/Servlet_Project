@@ -4,7 +4,7 @@
 <html>
 <body>
   <header>
-  		<h1>Logo_img</h1>
+  		<h1><a href="${pageContext.request.contextPath}/ProductListAllController"><img src="${pageContext.request.contextPath}/img/logo_wh.png"></a></h1>
 	    <div class="profile">
 	    	<h4>
 	            <span class="material-symbols-outlined">account_circle</span>

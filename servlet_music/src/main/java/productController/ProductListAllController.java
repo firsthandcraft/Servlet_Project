@@ -49,7 +49,7 @@ public class ProductListAllController extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		ArrayList<Product> products= ProductService.findAll();
 		request.setAttribute("products", products);
-		String path = "/product/productlist.jsp";
+		String path = "/common/main.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}
