@@ -1,12 +1,9 @@
 @charset "utf-8";
 .search{position:fixed;top:12px;z-index:900;}
-.genre{margin:32px 0 70px;}
-.genre ul{display:flex;justify-content:space-between;flex-wrap:wrap;}
-.genre ul li{width:20%;padding:30px;margin:10px;border-radius:8px; background:pink url('img/m1.png') no-repeat left top fixed;}
-.genre ul li:nth-child(2){background-image:url('img/m2.png');}
-.genre ul li:nth-child(3){background-image:url('img/m3.png');}
-.genre ul li:nth-child(4){background-image:url('img/m4.png');}
-.genre ul li:nth-child(5){background-image:url('img/m5.png');}
+.Sinput{width:400px;padding:6px 48px;border-radius:20px;color:#000;}
+.genre{margin:15px 0 70px;}
+.genre ul{display:flex;justify-content:flex-start;flex-wrap:wrap;}
+.genre ul li{padding:10px 16px;;margin:4px;border-radius:20px; background:#00000047;}
 .music table{width:100%;}
 .music table thead th{height:36px;border-bottom:1px solid hsla(0,0%,100%,.1);color:#b3b3b3;}
 .music table tr{border-radius:4px;}

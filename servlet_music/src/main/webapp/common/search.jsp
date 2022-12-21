@@ -29,16 +29,17 @@
          <main><!-- main -->
 			<div class="search">
                 <form action="">
-                    <input type="text">
-                    <button></button>
+                    <input class="Sinput" type="text"maxlength="800"placeholder="어떤 음악을 듣고 싶으세요?">
+                    <button><span class="material-symbols-outlined">search</span></button>
                 </form>
             </div>
             <!--  -->
             <div class="genre">
                 <ul>
-                    <li class="m1"><a href="#">앨범</a></li>
-                    <li class="m2"><a href="#">곡</a></li>
-                    <li class="m3"><a href="#">아티스트</a></li>
+                    <li class="m1"><a href="#">모두</a></li>
+                    <li class="m2"><a href="#">앨범</a></li>
+                    <li class="m3"><a href="#">곡</a></li>
+                    <li class="m4"><a href="#">아티스트</a></li>
                 </ul>
             </div>
         </main><!-- main -->
