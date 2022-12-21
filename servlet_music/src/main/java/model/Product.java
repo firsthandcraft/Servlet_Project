@@ -24,6 +24,12 @@ public class Product {
 	public Product() {
 		super();
 	}
+	
+	public Product(String p_email, String p_seller) {
+		super();
+		this.p_email = p_email;
+		this.p_seller = p_seller;
+	}
 	public String getP_title() {
 		return p_title;
 	}

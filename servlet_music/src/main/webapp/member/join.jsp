@@ -75,7 +75,7 @@
 					<label><span>여성</span><input type="radio" name="gender" value="female"></label>
 				</p>
 			<span class=" Jcheck hide">성별을 선택하세요.</span>
-			<input type="hidden" name="MembershipPlan"value="seller">
+			<input type="hidden" name="MembershipPlan"value="buyer">
 			<input type="button" class="submit" value="Join" onClick="emptyCheck(this.form)">
 		</form>
 		<div class="or">

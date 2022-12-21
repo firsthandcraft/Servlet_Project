@@ -36,76 +36,10 @@
             <!--  -->
             <div class="genre">
                 <ul>
-                    <li class="m1"><a href="#">가요</a></li>
-                    <li class="m2"><a href="#">pop</a></li>
-                    <li class="m3"><a href="#">힙합</a></li>
-                    <li class="m4"><a href="#">랩</a></li>
-                    <li class="m5"><a href="#">재즈</a></li>
+                    <li class="m1"><a href="#">앨범</a></li>
+                    <li class="m2"><a href="#">곡</a></li>
+                    <li class="m3"><a href="#">아티스트</a></li>
                 </ul>
-            </div>
-            <div class="music">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>제목</th>
-                            <th>앨범</th>
-                            <th>발매일</th>
-                            <th>시간icon</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- 반복 -->
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <div class="titleImg">
-                                    <img src="" alt="">
-                                    <div>
-                                        <p>제목...</p>
-                                        <p>Artist name</p>
-                                    </div>
-                                </div>
-                                
-                            </td>
-                            <td>앨범명</td>
-                            <td>2021.01.19</td>
-                            <td>3:20</td>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <div class="titleImg">
-                                    <img src="" alt="">
-                                    <div>
-                                        <p>제목...</p>
-                                        <p>Artist name</p>
-                                    </div>
-                                </div>
-                                
-                            </td>
-                            <td>앨범명</td>
-                            <td>2021.01.19</td>
-                            <td>3:20</td>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <div class="titleImg">
-                                    <img src="" alt="">
-                                    <div>
-                                        <p>제목...</p>
-                                        <p>Artist name</p>
-                                    </div>
-                                </div>
-                                
-                            </td>
-                            <td>앨범명</td>
-                            <td>2021.01.19</td>
-                            <td>3:20</td>
-                        </tr>
-                        <!-- 반복 -->
-                        <!-- 최대 50개 -->
-                    </tbody>
-                </table>
             </div>
         </main><!-- main -->
         </div><!-- contentWrap -->

@@ -156,6 +156,22 @@ public class ProductDaoImpl implements ProductDao{
 		}
 		
 	}
+	@Override
+	public void updateMembershipPlan(Product p) {
+		// TODO Auto-generated method stub
+		String sql="update servlet_music_product set p_seller=? where p_email=?";
+		try {
+			con();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, p.getP_seller());
+			pstmt.setString(2, p.getP_email());
+			pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			discon();
+		}
+	}
 
 	@Override
 	public void delete(String p_title) {

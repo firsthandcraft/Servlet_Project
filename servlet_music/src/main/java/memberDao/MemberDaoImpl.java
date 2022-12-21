@@ -84,6 +84,22 @@ public class MemberDaoImpl implements MemberDao{
 			discon();
 		}
 	}
+	@Override
+	public void updateMemberShipPlan(Member m) {
+		// TODO Auto-generated method stub
+		String sql="update servlet_music_member set MembershipPlan=? where email=?";
+		try {
+			con();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, m.getMembershipPlan());
+			pstmt.setString(2, m.getEmail());
+			pstmt.executeUpdate();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			discon();
+		}
+	}
 
 	@Override
 	public void delete(String email) {

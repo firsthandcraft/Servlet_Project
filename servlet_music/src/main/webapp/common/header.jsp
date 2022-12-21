@@ -15,6 +15,7 @@
 	        	<li><a href="${pageContext.request.contextPath}/SearchController">계정<span class="material-symbols-outlined">login</span></a></li>
 	        	<li><a href="${pageContext.request.contextPath}/LogoutController">로그아웃</a></li>
 	        	<li><a href="#">프로필</a></li>
+	        	<li><a href="${pageContext.request.contextPath}/member/membershipPlan.jsp">Preminum 이용하기</a></li>
 	        </ul>
 	    </div>
   </header>

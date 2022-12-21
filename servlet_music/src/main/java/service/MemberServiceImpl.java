@@ -50,5 +50,10 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		dao.pwdUpdate(m);
 	}
+	@Override
+	public void editMemberShipPlan(Member m) {
+		// TODO Auto-generated method stub
+		dao.updateMemberShipPlan(m);
+	}
 
 }
