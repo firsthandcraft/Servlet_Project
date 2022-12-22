@@ -16,10 +16,10 @@ body{background-color:#000;}
 .Sresult h6 a{opacity:0.5;display:inline-block;margin-left:20px;font-size:14px;color:#fff;transition:300ms;}
 .Sresult h6 a:hover{opacity:1;}
 .Sresult section{width:100%;margin:30px 0;}
-.listWrap ul{display:flex;margin-top:20px;}
-.content li{background:pink; width:176px; margin:0 10px;padding: 10px 10px; float:left;border-radius:10px;}
+.listWrap ul{display:flex;flex-wrap:wrap;margin-top:20px;}
+.content li{width:176px; margin:0 10px 20px;padding: 10px 10px; float:left;border-radius:10px;}
 .content li:hover{background-color:#363636;  transition: background-color .3s ease;color:rgba(222, 222, 222, 1);}
-.content li img{border-radius:50%;}
+/*.content li img{border-radius:50%;}*/
 .music{margin-top:20px;}
 .music table{width:100%;}
 .music table thead th{height:36px;border-bottom:1px solid hsla(0,0%,100%,.1);color:#b3b3b3;}

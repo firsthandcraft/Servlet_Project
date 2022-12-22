@@ -27,7 +27,7 @@
     <div class="contentWrap"><!-- contentWrap -->
 
         <main><!-- main -->
-            <div class="artistList"style="display:none;">
+            <div class="artistList">
             	<div class="List_title" >
 	            	 <h3>${m.name}님을 위한 Artist</h3>
 	                <div class="arrow">
