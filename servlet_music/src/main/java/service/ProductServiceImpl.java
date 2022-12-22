@@ -51,6 +51,11 @@ public class ProductServiceImpl implements ProductService{
 		// TODO Auto-generated method stub
 		dao.updateMembershipPlan(p);
 	}
+	@Override
+	public ArrayList<Product> searchProduct(String p_title) {
+		// TODO Auto-generated method stub
+		return dao.selectProduct(p_title);
+	}
 
 
 

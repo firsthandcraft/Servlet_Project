@@ -12,5 +12,6 @@ public interface ProductService {
 	Product findProduct(String p_title);
 	ArrayList<Product> findAllByP_email(String p_email);
 	ArrayList<Product> findAll();
+	ArrayList<Product> searchProduct(String p_title);
 	
 }

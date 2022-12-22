@@ -11,7 +11,8 @@
 .Acontent p{font-weight:bold; text-align:center;}
 .List_title{display:flex;justify-content:space-between;margin-bottom:30px;}
 .List_title h3{position:relative;}
-.List_title h3 span{position:absolute;right:-60px;top:15px;font-size:14px;}
+.List_title h3 a{position:absolute;right:-60px;top:15px;opacity:0.5;display:inline-block;margin-left:20px;font-size:14px;color:#fff;transition:300ms;}
+.List_title h3 a:hover{opacity:1;}
 .Mcontent li div{display:flex;justify-content:space-between;}
 .musicList{padding:0 16px;}
 .arrow{text-align: right;}

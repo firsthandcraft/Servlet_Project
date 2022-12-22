@@ -28,19 +28,124 @@
 
          <main><!-- main -->
 			<div class="search">
-                <form action="">
-                    <input class="Sinput" type="text"maxlength="800"placeholder="어떤 음악을 듣고 싶으세요?">
-                    <button><span class="material-symbols-outlined">search</span></button>
+                <form action="${pageContext.request.contextPath}/searchController" method="get" name="searchForm" id="searchForm">
+                	<span class="Sicon material-symbols-outlined">search</span>
+                    <input class="Sinput"name="search"type="text" value="${p_title}" onkeyup="showBtn()"onfocus="this.value = this.value;" maxlength="800"placeholder="어떤 음악을 듣고 싶으세요?">
+                    <button type="reset"  class="close hide"><span class="material-symbols-outlined">close</span></button>
                 </form>
             </div>
             <!--  -->
             <div class="genre">
                 <ul>
-                    <li class="m1"><a href="#">모두</a></li>
+                    <li class="m1 spot"><a href="#">모두</a></li>
                     <li class="m2"><a href="#">앨범</a></li>
                     <li class="m3"><a href="#">곡</a></li>
                     <li class="m4"><a href="#">아티스트</a></li>
                 </ul>
+            </div>
+            <div class="Sresult">
+            	<section class="RAlbum">
+            		<h6>Album<span><a href="#">더보기</a></span></h6>
+            		 <div class="listWrap">
+	                    <ul class="content">
+	                    <c:forEach var="p" items="${products}">
+	                        <li>
+								<a href="${pageContext.request.contextPath}/ProductSearchController?p_title=${p.p_title}">
+									<img src="${p.p_img}"alt="albumimg">
+									<span>${p.p_title}</span>
+									<span><small>만든사람: ${p.p_producer}</small></span>
+								</a>  
+							</li>
+	                      </c:forEach>          
+	                    </ul>
+                	</div>
+            	</section>
+            	<section class="RSong" style="display:none;">
+            		<h6>Music<span><a href="#">더보기</a></span></h6>
+	            	<div class="music">
+		                <table>
+		                    <thead>
+		                        <tr>
+		                            <th>#</th>
+		                            <th>제목</th>
+		                            <th>앨범</th>
+		                            <th>발매일</th>
+		                            <th>시간icon</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+		                        <!-- 반복 -->
+		                        <tr>
+		                            <td>1</td>
+		                            <td>
+		                                <div class="titleImg">
+		                                    <img src="" alt="">
+		                                    <div>
+		                                        <p>제목...</p>
+		                                        <p>Artist name</p>
+		                                    </div>
+		                                </div>
+		                                
+		                            </td>
+		                            <td>앨범명</td>
+		                            <td>2021.01.19</td>
+		                            <td>3:20</td>
+		                        <tr>
+		                            <td>1</td>
+		                            <td>
+		                                <div class="titleImg">
+		                                    <img src="" alt="">
+		                                    <div>
+		                                        <p>제목...</p>
+		                                        <p>Artist name</p>
+		                                    </div>
+		                                </div>
+		                                
+		                            </td>
+		                            <td>앨범명</td>
+		                            <td>2021.01.19</td>
+		                            <td>3:20</td>
+		                        <tr>
+		                            <td>1</td>
+		                            <td>
+		                                <div class="titleImg">
+		                                    <img src="" alt="">
+		                                    <div>
+		                                        <p>제목...</p>
+		                                        <p>Artist name</p>
+		                                    </div>
+		                                </div>
+		                                
+		                            </td>
+		                            <td>앨범명</td>
+		                            <td>2021.01.19</td>
+		                            <td>3:20</td>
+		                        </tr>
+		                        <!-- 반복 -->
+		                        <!-- 최대 50개 -->
+		                    </tbody>
+		                </table>
+	            	</div>
+            	</section>
+            	<section class="RArtist" style="display:none;">
+            		<h6>Artist<span><a href="#">더보기</a></span></h6>
+            		<div class="listWrap">
+	                    <ul class="content">
+	                        <li>
+	                            <img src="" alt="artistimg">
+	                            <p>악동뮤지션</p>    
+	                        </li>
+	                        <li>
+	                            <img src="" alt="artistimg">
+	                            <p>ff</p>    
+	                        </li>
+	                        <li>
+	                            <img src="" alt="artistimg">
+	                            <p>rr</p>    
+	                        </li>          
+	                    </ul>
+                	</div>
+            	</section>
             </div>
         </main><!-- main -->
         </div><!-- contentWrap -->

@@ -188,6 +188,26 @@ public class ProductDaoImpl implements ProductDao{
 			discon();
 		}
 	}
+	@Override
+	public ArrayList<Product> selectProduct(String p_title) {
+		// TODO Auto-generated method stub
+		String sql="select  *from servlet_music_product where  p_title like ?";
+		ArrayList<Product> lists= new ArrayList<Product>();
+		try {
+			con();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, "%"+p_title+"%");
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				lists.add(new Product(rs.getString(1),rs.getDate(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7)));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			discon();
+		}
+		return lists;
+	}
 
 	
 

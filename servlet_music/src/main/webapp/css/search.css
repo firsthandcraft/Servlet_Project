@@ -1,18 +1,38 @@
 @charset "utf-8";
-.search{position:fixed;top:12px;z-index:900;}
-.Sinput{width:400px;padding:6px 48px;border-radius:20px;color:#000;}
-.genre{margin:15px 0 70px;}
+
+body{background-color:#000;}
+.search{position:fixed;top:6px;z-index:900;}
+.Sinput{width:340px;height:24px;padding:6px 48px;border-radius:20px;color:#000;}
+.Sinput:focus{outline:none;}
+.search span{position:fixed;top:14px;left:588px;z-index:1000;color:#000;}
+.search .Sicon{left:206px;}
+.genre{margin:16px 0;}
 .genre ul{display:flex;justify-content:flex-start;flex-wrap:wrap;}
-.genre ul li{padding:10px 16px;;margin:4px;border-radius:20px; background:#00000047;}
+.genre ul li{padding:6px 14px;;margin:4px;border-radius:20px;font-size:14px;background:#ffffff30;}
+.genre ul li.spot{background:#fff;}
+.genre ul li.spot a{color:#000;}
+.Sresult{display:flex;flex-direction:row;flex-wrap:wrap;}
+.Sresult h6{font-size:32px;font-weight:bold;}
+.Sresult h6 a{opacity:0.5;display:inline-block;margin-left:20px;font-size:14px;color:#fff;transition:300ms;}
+.Sresult h6 a:hover{opacity:1;}
+.Sresult section{width:100%;margin:30px 0;}
+.listWrap ul{display:flex;margin-top:20px;}
+.content li{background:pink; width:176px; margin:0 10px;padding: 10px 10px; float:left;border-radius:10px;}
+.content li:hover{background-color:#363636;  transition: background-color .3s ease;color:rgba(222, 222, 222, 1);}
+.content li img{border-radius:50%;}
+.music{margin-top:20px;}
 .music table{width:100%;}
 .music table thead th{height:36px;border-bottom:1px solid hsla(0,0%,100%,.1);color:#b3b3b3;}
 .music table tr{border-radius:4px;}
 .music table tr td,.music table tr th{padding:8px 10px;text-align:left;}
 .music table thead tr{margin-bottom:8px;}
 .music .titleImg{display:flex;}
-.music .titleImg img{width:40px;height:40px;}
-.music .titleImg div{
-margin-left:10px;}
+.music .titleImg img,.albumImg img{width:40px;height:40px;}
+.music .titleImg div{margin-left:10px;}
+.music .albumImg{width:100%;}
+
+
+
 .music table tbody tr:hover{background-color:hsla(0,0%,100%,.3);}
 td,th{vertical-align: middle;}
 table{border-spacing:0;}

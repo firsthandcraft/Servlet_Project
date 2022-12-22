@@ -13,6 +13,7 @@ public interface ProductDao {
 	ArrayList<Product> selectAllByP_email(String p_email);
 	Product select(String p_title);
 	ArrayList<Product> selectAll();
+	ArrayList<Product> selectProduct(String p_title);
 	//void updateP(int q, int num);
 }
  

@@ -27,14 +27,14 @@
     <div class="contentWrap"><!-- contentWrap -->
 
         <main><!-- main -->
-            <div class="artistList">
-            	<div class="List_title">
+            <div class="artistList"style="display:none;">
+            	<div class="List_title" >
 	            	 <h3>${m.name}님을 위한 Artist</h3>
 	                <div class="arrow">
 	                    <span class="material-symbols-outlined leftBTN">chevron_left</span>
 	                    <span class="material-symbols-outlined rightBTN">chevron_right</span>
 	                </div>
-                </div>
+               </div>
                 <div class="listWrap">
                     <ul class="Acontent">
                         <li>
@@ -54,7 +54,7 @@
             </div>         
             <div class="musicList">
             	<div class="List_title">
-	                <h3>playList<span><a href="#">더보기</a></span></h3>
+	                <h3>playList<span><a href="${pageContext.request.contextPath}/AlbumList/AlbumList.jsp">더보기</a></span></h3>
 	                <div class="arrow">
 	                    <span class="material-symbols-outlined leftBTN" >chevron_left</span>
 	                    <span class="material-symbols-outlined rightBTN">chevron_right</span>

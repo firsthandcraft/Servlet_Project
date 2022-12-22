@@ -7,12 +7,12 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reset.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/search.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/albumDetail.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
   crossorigin="anonymous"></script>
 <meta charset="utf-8">
-<title>AlbumList</title>
+<title>AlbumDetail</title>
 </head>
 <!-- 로그인이 아닐 경우 넣기  -->
 <body>
@@ -27,26 +27,33 @@
     <div class="contentWrap"><!-- contentWrap -->
 
          <main><!-- main -->
-            <!--  -->
-            <div class="genre">
-                <ul>
-                    <li class="m1 spot"><a href="#">가요</a></li>
-                    <li class="m2"><a href="#">pop</a></li>
-                    <li class="m3"><a href="#">힙합</a></li>
-                    <li class="m4"><a href="#">랩</a></li>
-                    <li class="m5"><a href="#">재즈</a></li>
-                </ul>
-            </div>
-            <div class="topbanner">
-            	
-            </div>
-            <div class="music">
+         	<ul class="topBanner">
+         		<li><img></img></li>
+         		<li>
+         			<p>Album</p>
+         			<h4>My Shazam Tracks</h4>
+         			<h5>Artist<span>12곡</span></h5>
+         		</li>
+         	</ul>
+         	<section class="playIcon">
+         		<ul>
+         			<li><a href="#"><span class="material-symbols-outlined">play_circle</span></a></li>
+         			<li>
+         				<a href="#"><span class="material-symbols-outlined">more_horiz</span></a>
+         				<ul class="submenu">
+         					<li><a href="#">신고하기</a></li>
+         					<li><a href="#">공유하기</a></li>
+         				</ul>
+         			</li>
+         		</ul>
+         	</section>
+         	 <div class="music">
                 <table>
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>앨범명</th>
-                            <th>아티스트</th>
+                            <th>제목</th>
+                            <th>앨범</th>
                             <th>발매일</th>
                             <th>시간icon</th>
                         </tr>
@@ -56,34 +63,46 @@
                         <tr>
                             <td>1</td>
                             <td>
-                                <a class="albumImg" href="${pageContext.request.contextPath}/AlbumList/AlbumDetail.jsp">
-                                	<img src="" alt="">
-                                    <span>제목...</span>
-                               	</a>  
+                                <div class="titleImg">
+                                    <img src="" alt="">
+                                    <div>
+                                        <p>제목...</p>
+                                        <p>Artist name</p>
+                                    </div>
+                                </div>
+                                
                             </td>
-                            <td><a  href="#">아티스트</a></td>
+                            <td>앨범명</td>
                             <td>2021.01.19</td>
                             <td>3:20</td>
                         <tr>
                             <td>1</td>
                             <td>
-                               	<a class="albumImg" href="${pageContext.request.contextPath}/AlbumList/AlbumDetail.jsp">
-                                	<img src="" alt="">
-                                    <span>제목...</span>
-                               	</a>  
+                                <div class="titleImg">
+                                    <img src="" alt="">
+                                    <div>
+                                        <p>제목...</p>
+                                        <p>Artist name</p>
+                                    </div>
+                                </div>
+                                
                             </td>
-                            <td><a  href="#">아티스트</a></td>
+                            <td>앨범명</td>
                             <td>2021.01.19</td>
                             <td>3:20</td>
                         <tr>
                             <td>1</td>
                             <td>
-                                <a class="albumImg" href="${pageContext.request.contextPath}/AlbumList/AlbumDetail.jsp">
-                                	<img src="" alt="">
-                                    <span>제목...</span>
-                               	</a>  
+                                <div class="titleImg">
+                                    <img src="" alt="">
+                                    <div>
+                                        <p>제목...</p>
+                                        <p>Artist name</p>
+                                    </div>
+                                </div>
+                                
                             </td>
-                            <td><a  href="#">아티스트</a></td>
+                            <td>앨범명</td>
                             <td>2021.01.19</td>
                             <td>3:20</td>
                         </tr>
