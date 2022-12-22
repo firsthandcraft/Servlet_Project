@@ -1,10 +1,11 @@
 @charset "utf-8";
 
 body{background-color:#000;}
-.search{position:fixed;top:6px;z-index:900;}
+.search{position:fixed;top:10px;z-index:900;}
 .Sinput{width:340px;height:24px;padding:6px 48px;border-radius:20px;color:#000;}
 .Sinput:focus{outline:none;}
-.search span{position:fixed;top:14px;left:588px;z-index:1000;color:#000;}
+.Sicon,#searchForm button{position:fixed;top:18px;left:588px;z-index:1000;}
+#searchForm span{color:#000;z-index:900}
 .search .Sicon{left:206px;}
 .genre{margin:16px 0;}
 .genre ul{display:flex;justify-content:flex-start;flex-wrap:wrap;}

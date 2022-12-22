@@ -54,7 +54,7 @@
             </div>         
             <div class="musicList">
             	<div class="List_title">
-	                <h3>playList<span><a href="${pageContext.request.contextPath}/AlbumList/AlbumList.jsp">더보기</a></span></h3>
+	                <h3>playList<span><a href="${pageContext.request.contextPath}/ProductListAllController">더보기</a></span></h3>
 	                <div class="arrow">
 	                    <span class="material-symbols-outlined leftBTN" >chevron_left</span>
 	                    <span class="material-symbols-outlined rightBTN">chevron_right</span>

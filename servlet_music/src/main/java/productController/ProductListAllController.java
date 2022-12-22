@@ -35,7 +35,15 @@ public class ProductListAllController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doPost(request, response);
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		ProductService ProductService = new ProductServiceImpl();
+		HttpSession session = request.getSession(false);
+		ArrayList<Product> products= ProductService.findAll();
+		request.setAttribute("products", products);
+		String path = "/common/main.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+		dispatcher.forward(request, response);
 	}
 
 	/**

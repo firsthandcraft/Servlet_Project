@@ -48,45 +48,23 @@
                             <th>앨범명</th>
                             <th>아티스트</th>
                             <th>발매일</th>
-                            <th>시간icon</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- 반복 -->
+                        <c:forEach var="p" items="${products}">
                         <tr>
                             <td>1</td>
                             <td>
                                 <a class="albumImg" href="${pageContext.request.contextPath}/AlbumList/AlbumDetail.jsp">
-                                	<img src="" alt="">
-                                    <span>제목...</span>
+                                	<img src=""${p.p_img} alt="albumimg">
+                                    <span>${p.p_title}</span>
                                	</a>  
                             </td>
-                            <td><a  href="#">아티스트</a></td>
-                            <td>2021.01.19</td>
-                            <td>3:20</td>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                               	<a class="albumImg" href="${pageContext.request.contextPath}/AlbumList/AlbumDetail.jsp">
-                                	<img src="" alt="">
-                                    <span>제목...</span>
-                               	</a>  
-                            </td>
-                            <td><a  href="#">아티스트</a></td>
-                            <td>2021.01.19</td>
-                            <td>3:20</td>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <a class="albumImg" href="${pageContext.request.contextPath}/AlbumList/AlbumDetail.jsp">
-                                	<img src="" alt="">
-                                    <span>제목...</span>
-                               	</a>  
-                            </td>
-                            <td><a  href="#">아티스트</a></td>
-                            <td>2021.01.19</td>
-                            <td>3:20</td>
+                            <td><a  href="#"> ${p.p_producer}</a></td>
+                            <td>${p.p_date}</td>
                         </tr>
+                        </c:forEach>
                         <!-- 반복 -->
                         <!-- 최대 50개 -->
                     </tbody>
@@ -96,7 +74,7 @@
         </div><!-- contentWrap -->
 </div>
 </body>
-<script src="${pageContext.request.contextPath}/javascript/search.js" charset="utf-8"></script>
+
 <script src="${pageContext.request.contextPath}/javascript/header.js" charset="utf-8"></script>
 
 </html>

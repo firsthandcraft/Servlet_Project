@@ -12,8 +12,11 @@
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
   crossorigin="anonymous"></script>
 <meta charset="utf-8">
-<title>main</title>
+<title>search</title>
 </head>
+<script type="text/javascript">
+
+</script>
 <!-- 로그인이 아닐 경우 넣기  -->
 <body>
 
@@ -30,8 +33,8 @@
 			<div class="search">
                 <form action="${pageContext.request.contextPath}/searchController" method="get" name="searchForm" id="searchForm">
                 	<span class="Sicon material-symbols-outlined">search</span>
-                    <input class="Sinput"name="search"type="text" value="${p_title}" onkeyup="showBtn()"onfocus="this.value = this.value;" maxlength="800"placeholder="어떤 음악을 듣고 싶으세요?">
-                    <button type="reset"  class="close hide"><span class="material-symbols-outlined">close</span></button>
+                    <input class="Sinput"name="search"type="text" value="${p_title}" onkeyup="showBtn()" maxlength="800"placeholder="어떤 음악을 듣고 싶으세요?">
+                    <button type="button"class="close hide"><span onclick="remove()" class="material-symbols-outlined">close</span></button>
                 </form>
             </div>
             <!--  -->
