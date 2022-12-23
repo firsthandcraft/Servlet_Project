@@ -46,6 +46,7 @@ var flag= confirm("정말 삭제하시겠습니까?");
                 <div class="enrollWrap">
                     <form method="post" name="albumForm"action="${pageContext.request.contextPath}/ProductEditController" enctype="multipart/form-data" >
                         <ul class="albumContent">
+                            <li><input type="number" name="p_num" value="${p.p_num}" readonly></li>
                             <li><input type="text" name="p_title" value="${p.p_title}" readonly></li>
                             <li><input type="text" name="p_date" value="${p.p_date}" readonly></li>
                             <li>

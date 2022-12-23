@@ -56,7 +56,7 @@ public class ProductDaoImpl implements ProductDao{
 			pstmt.setString(1, p_email);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
-				lists.add(new Product(rs.getString(1),rs.getDate(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7)));
+				lists.add(new Product(rs.getInt(1),rs.getString(2),rs.getDate(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8)));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -76,7 +76,7 @@ public class ProductDaoImpl implements ProductDao{
 			pstmt.setString(1, p_title);
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
-				p = new Product(rs.getString(1),rs.getDate(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7));
+				p = new Product(rs.getInt(1),rs.getString(2),rs.getDate(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -97,7 +97,7 @@ public class ProductDaoImpl implements ProductDao{
 			pstmt=conn.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
-				p =new Product(rs.getString(1),rs.getDate(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7));
+				p =new Product(rs.getInt(1),rs.getString(2),rs.getDate(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8));
 				list.add(p);
 			}
 		}catch(SQLException e) {
@@ -110,7 +110,7 @@ public class ProductDaoImpl implements ProductDao{
 	@Override
 	public void insert(Product p) {
 		// TODO Auto-generated method stub
-		String sql="insert into servlet_music_product values(?,sysdate,?,?,?,?,?)";
+		String sql="insert into servlet_music_product values(seq_servlet_music_product.nextval,?,sysdate,?,?,?,?,?)";
 		try {
 			con();
 			pstmt=conn.prepareStatement(sql);
@@ -199,7 +199,7 @@ public class ProductDaoImpl implements ProductDao{
 			pstmt.setString(1, "%"+p_title+"%");
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
-				lists.add(new Product(rs.getString(1),rs.getDate(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7)));
+				lists.add(new Product(rs.getInt(1),rs.getString(2),rs.getDate(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8)));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();

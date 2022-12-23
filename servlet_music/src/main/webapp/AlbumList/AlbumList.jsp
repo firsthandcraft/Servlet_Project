@@ -57,8 +57,8 @@
                             <td>1</td>
                             <td>
                                 <a class="albumImg" href="${pageContext.request.contextPath}/AlbumList/AlbumDetail.jsp">
-                                	<img src=""${p.p_img} alt="albumimg">
-                                    <span>${p.p_title}</span>
+                                	<img src="${p.p_img}" alt="albumimg">
+                                    <span class="title">${p.p_title}</span>
                                	</a>  
                             </td>
                             <td><a  href="#"> ${p.p_producer}</a></td>

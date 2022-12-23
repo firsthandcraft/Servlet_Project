@@ -42,6 +42,7 @@
                             </li>
                             <li><input type="button" value="등록" onclick="nullCheck(this.form)"></li>
                         </ul>
+                        <input type="hidden" name="p_num">
                     </form>
                 </div>
         </main><!-- main -->

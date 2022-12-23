@@ -30,6 +30,7 @@ body{background-color:#000;}
 .music .titleImg{display:flex;}
 .music .titleImg img,.albumImg img{width:40px;height:40px;}
 .music .titleImg div{margin-left:10px;}
+.music .title{margin-left:16px;}
 .music .albumImg{width:100%;}
 
 
