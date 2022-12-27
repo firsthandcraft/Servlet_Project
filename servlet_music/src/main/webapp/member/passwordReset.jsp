@@ -14,7 +14,7 @@
 <c:if test="${requestScope.flag==false}">
 	<script>
 		alert("등록되지 않은 이메일입니다.");
-		PasswordResetFormㄴ.email.focus();
+		PasswordResetForm.email.focus();
 	</script>
 </c:if>
 <div class="formWrap">

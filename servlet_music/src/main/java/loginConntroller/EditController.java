@@ -45,13 +45,14 @@ public class EditController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		MemberService service= new MemberServiceImpl();
+		String mno= request.getParameter("mno");
 		String email = request.getParameter("email"); 
 		String pwd = request.getParameter("pwd"); 
 		String name = request.getParameter("name"); 
 		String birth = request.getParameter("birth"); 
 		String gender = request.getParameter("gender");
 		String MembershipPlan= request.getParameter("MembershipPlan");
-		Member m = new Member(email,pwd,name,birth,gender,MembershipPlan);
+		Member m = new Member(mno,email,pwd,name,birth,gender,MembershipPlan);
 		service.editMember(m);
 		String path = "/ProductListAllController";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);

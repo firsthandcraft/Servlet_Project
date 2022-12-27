@@ -45,14 +45,13 @@ public class JoinController extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		
 		MemberService service = new MemberServiceImpl();
-		
 		String email = request.getParameter("email"); 
 		String pwd = request.getParameter("pwd"); 
 		String name = request.getParameter("name"); 
 		String birth = request.getParameter("birth"); 
 		String gender = request.getParameter("gender"); 
 		String MembershipPlan = request.getParameter("MembershipPlan"); 
-		Member m = new Member(email,pwd,name,birth,gender,MembershipPlan);
+		Member m = new Member("",email,pwd,name,birth,gender,MembershipPlan);
 		service.joinMember(m);
 		String path = "/member/login.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);

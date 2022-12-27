@@ -49,7 +49,6 @@ public class SearchController extends HttpServlet {
 		String email = (String)session.getAttribute("email"); 
 		Member m = service.findMember(email);
 		
-		
 		service.joinMember(m); 
 		request.setAttribute("m", m);
 		String path = "/member/editForm.jsp";

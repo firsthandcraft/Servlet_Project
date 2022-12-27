@@ -19,12 +19,16 @@
 	<hr>
 	
 	<h4>DB</h4>
+	<p>insert into servlet_music_member values((select 'M' || to_char(sysdate,'yyyymmdd') ||
+        LPAD(nvl(max(substr(mno,11))+1,1),4,'0') from SERVLET_MUSIC_MEMBER where 
+        substr(mno,2,8) = to_char(sysdate,'yyyymmdd')),'email','password','name',sysdate,'gender','membershipPlan');</p>
 	<p>drop table SERVLET_MUSIC_MEMBER; 
 		create table SERVLET_MUSIC_MEMBER(
-		email varchar2(80)  primary key, 
+        mno varchar2(500) primary key,
+		email varchar2(80)  not null, 
 		password  varchar2(20) not null, 
 		name varchar2(20) not null,
-		birth date,
+		birth  varchar2(20) not null,
 		gender varchar2(30),
 		membershipPlan varchar2(20) not null
 		);

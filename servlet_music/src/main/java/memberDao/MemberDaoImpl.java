@@ -46,7 +46,9 @@ public class MemberDaoImpl implements MemberDao{
 	public void insert(Member m) {
 		// TODO Auto-generated method stub
 		//dbConnection 1번째 방법으로 실행(conn만)
-				String sql="insert into servlet_music_member values(?,?,?,?,?,?)";
+				String sql="insert into servlet_music_member values((select 'M' || to_char(sysdate,'yyyymmdd') ||\r\n"
+						+ "        LPAD(nvl(max(substr(mno,11))+1,1),4,'0') from SERVLET_MUSIC_MEMBER where \r\n"
+						+ "        substr(mno,2,8) = to_char(sysdate,'yyyymmdd')),?,?,?,?,?,?)";
 				try {
 					conn=db.getConnection();
 					pstmt=conn.prepareStatement(sql);
@@ -128,7 +130,7 @@ public class MemberDaoImpl implements MemberDao{
 			pstmt.setString(1, email);
 			rs= pstmt.executeQuery();
 			if(rs.next()) {
-				member = new Member(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
+				member = new Member(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7));
 			 return member;
 			}
 		} catch(SQLException e) {
