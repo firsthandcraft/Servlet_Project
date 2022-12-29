@@ -49,9 +49,9 @@ public class ProductDelController extends HttpServlet {
 		String p_title= request.getParameter("p_title");
 		Product p = ProductService.findProduct(p_title);
 		ProductService.delProduct(p_title);
-		String uploadPath="C:\\backendminiproject\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\album_img\\";
+		String uploadPath="C:\\BackendToyProject\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\album_img\\";
 		String arr[]=p.getP_img().split("/");
-		String fname=arr[arr.length-1];//¹è¿­ÀÌ 0ºÎÅÍ µé¾î°¡°Ô
+		String fname=arr[arr.length-1];//ï¿½è¿­ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°¡ï¿½ï¿½
 		File f= new File(uploadPath+fname);
 		f.delete();
 		String path = "/servlet_music/ProductListController";

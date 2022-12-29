@@ -5,7 +5,7 @@
 <body>
     <nav>
         <ul class="navList">
-            <li><a href="${pageContext.request.contextPath}/ProductListAllController"><span class="material-symbols-outlined">home</span>home</a></li>
+            <li><a href="${pageContext.request.contextPath}/mainProductListAllController"><span class="material-symbols-outlined">home</span>home</a></li>
             <li><a href="${pageContext.request.contextPath}/common/search.jsp"><span class="material-symbols-outlined">search</span>검색하기</a></li>
             <li><a href="#"><span class="material-symbols-outlined">library_books</span>라이브러리</a></li>
           	

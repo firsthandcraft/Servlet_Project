@@ -54,6 +54,7 @@ public class ProductListController extends HttpServlet {
 		System.out.println("-> products :" +products);
 		System.out.println("-> s_email :" +p_email);
 		String path = "/product/productlist.jsp";
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}

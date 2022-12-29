@@ -56,10 +56,11 @@
                         <tr>
                             <td>1</td>
                             <td>
-                                <a class="albumImg" href="${pageContext.request.contextPath}/AlbumList/AlbumDetail.jsp">
+                                <a class="albumImg" href="${pageContext.request.contextPath}/AlbumDetailProductSearchContoller">
                                 	<img src="${p.p_img}" alt="albumimg">
                                     <span class="title">${p.p_title}</span>
                                	</a>  
+                               	<input type="hide"name="p_title" value="${p.p_title}">
                             </td>
                             <td><a  href="#"> ${p.p_producer}</a></td>
                             <td>${p.p_date}</td>

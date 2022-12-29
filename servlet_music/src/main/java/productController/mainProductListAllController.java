@@ -1,6 +1,7 @@
 package productController;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,16 +16,16 @@ import service.ProductService;
 import service.ProductServiceImpl;
 
 /**
- * Servlet implementation class ProductSearchController
+ * Servlet implementation class mainProductListAllController
  */
-@WebServlet("/ProductSearchController")
-public class ProductSearchController extends HttpServlet {
+@WebServlet("/mainProductListAllController")
+public class mainProductListAllController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProductSearchController() {
+    public mainProductListAllController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,7 +35,15 @@ public class ProductSearchController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doPost(request, response);
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		ProductService ProductService = new ProductServiceImpl();
+		HttpSession session = request.getSession(false);
+		ArrayList<Product> products= ProductService.findAll();
+		request.setAttribute("products", products);
+		String path = "/common/main.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+		dispatcher.forward(request, response);
 	}
 
 	/**
@@ -42,18 +51,7 @@ public class ProductSearchController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8");
-		ProductService service = new ProductServiceImpl();
-		//HttpSession session = request.getSession();
-		String p_title= request.getParameter("p_title");
-		Product p = service.findProduct(p_title);
-		request.setAttribute("p",p);
-	
-		String path = "/product/productEdit.jsp";
-		System.out.println("p :::ProductSearchController-: " +p);
-		RequestDispatcher dispatcher= request.getRequestDispatcher(path);
-		dispatcher.forward(request, response);	
+		doGet(request, response);
 	}
 
 }

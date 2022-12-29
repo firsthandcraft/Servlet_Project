@@ -8,6 +8,7 @@
 <title>login</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reset.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css">
+
 </head>
 <body>
 <c:if test="${requestScope.flag==false}">

@@ -1,4 +1,5 @@
 //JavaScript Document 
+
 function nullCheck(r){
 	let alertEmail=document.querySelector('.LoginAlertEmail');
 	let alertPwd=document.querySelector('.LoginAlertPwd');
@@ -30,4 +31,5 @@ function nullCheck(r){
 			alertPwd.classList.add('hide');
 		}
 	r.submit();
+	
 	}

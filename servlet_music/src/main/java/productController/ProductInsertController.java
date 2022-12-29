@@ -54,7 +54,7 @@ public class ProductInsertController extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		ProductService ProductService = new ProductServiceImpl();
 		MemberService MemberService=new MemberServiceImpl();
-		HttpSession session = request.getSession(false);//HttpSessionÀÌ Á¸ÀçÇÏ¸é ÇöÀç HttpSessionÀ» ¹ÝÈ¯ÇÏ°í Á¸ÀçÇÏÁö ¾ÊÀ¸¸é »õ·ÎÀÌ »ý¼ºÇÏÁö ¾Ê°í ±×³É nullÀ» ¹ÝÈ¯ÇÕ´Ï´Ù
+		HttpSession session = request.getSession(false);//HttpSessionï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ HttpSessionï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½×³ï¿½ nullï¿½ï¿½ ï¿½ï¿½È¯ï¿½Õ´Ï´ï¿½
 		String p_email=(String)session.getAttribute("email");
 		Product p = new Product();
 		p.setP_email(p_email);
@@ -64,17 +64,19 @@ public class ProductInsertController extends HttpServlet {
 		p.setP_seller(seller);
 		System.out.println("seller"+seller);
 		
-		//image ¸ÖÆ¼ÆÄÆ®: request, ÆÄÀÏÀúÀå°æ·Î,¿ë·®, ÀÎÄÚµù, Áßº¹ÆÄÀÏ
+		//image ï¿½ï¿½Æ¼ï¿½ï¿½Æ®: request, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ë·®, ï¿½ï¿½ï¿½Úµï¿½, ï¿½ßºï¿½ï¿½ï¿½ï¿½ï¿½
 		String img=null;
 		int maxSize=1024*1024*10;
-		String uploadPath="C:\\backendminiproject\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\album_img";
+		//String uploadPath="C:\\BackendToyProject\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\album_img";
+		String uploadPath=request.getSession().getServletContext().getRealPath("/album_img");
+		System.out.println("img"+uploadPath);
 		File upDir=new File(uploadPath);
 		if(!upDir.exists()) {
 			upDir.mkdir();
 		}
 		System.out.println("minsert - upDir"+upDir);
 		try {
-			// MultipartRequestÇü½Ä :request,ÆÄÀÏÀúÀå°æ·Î,¿ë·®,ÀÎÄÚµùÅ¸ÀÔ,Áßº¹ÆÄÀÏ¸í¿¡ ´ëÇÑ ±âº» Á¤Ã¥
+			// MultipartRequestï¿½ï¿½ï¿½ï¿½ :request,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ë·®,ï¿½ï¿½ï¿½Úµï¿½Å¸ï¿½ï¿½,ï¿½ßºï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½âº» ï¿½ï¿½Ã¥
 			MultipartRequest multi = new MultipartRequest(request, uploadPath,maxSize,"utf-8",new DefaultFileRenamePolicy());
 			p.setP_title(multi.getParameter("p_title"));
 			p.setP_producer(multi.getParameter("p_producer"));
@@ -90,7 +92,7 @@ public class ProductInsertController extends HttpServlet {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		p.setP_img("/album_img/"+img);
+		p.setP_img("/servlet_music/album_img/"+img);
 		ProductService.addProduct(p);
 		String path = "/servlet_music/ProductListController";
 		response.sendRedirect(path);

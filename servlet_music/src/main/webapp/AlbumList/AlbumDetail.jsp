@@ -28,11 +28,11 @@
 
          <main><!-- main -->
          	<ul class="topBanner">
-         		<li><img></img></li>
+         		<li><img src="${p.p_img}"alt="앨범이미지"></img></li>
          		<li>
-         			<p>Album</p>
-         			<h4>My Shazam Tracks</h4>
-         			<h5>Artist<span>12곡</span></h5>
+         			<p>${p.p_date}</p>
+         			<h4>${p.p_title}</h4>
+         			<h5>Artist <span>${p.p_producer}</span></h5>
          		</li>
          	</ul>
          	<section class="playIcon">
@@ -47,7 +47,7 @@
          			</li>
          		</ul>
          	</section>
-         	 <div class="music">
+         	 <div class="music" >
                 <table>
                     <thead>
                         <tr>
@@ -75,37 +75,8 @@
                             <td>앨범명</td>
                             <td>2021.01.19</td>
                             <td>3:20</td>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <div class="titleImg">
-                                    <img src="" alt="">
-                                    <div>
-                                        <p>제목...</p>
-                                        <p>Artist name</p>
-                                    </div>
-                                </div>
-                                
-                            </td>
-                            <td>앨범명</td>
-                            <td>2021.01.19</td>
-                            <td>3:20</td>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <div class="titleImg">
-                                    <img src="" alt="">
-                                    <div>
-                                        <p>제목...</p>
-                                        <p>Artist name</p>
-                                    </div>
-                                </div>
-                                
-                            </td>
-                            <td>앨범명</td>
-                            <td>2021.01.19</td>
-                            <td>3:20</td>
-                        </tr>
+                         </tr>
+                      
                         <!-- 반복 -->
                         <!-- 최대 50개 -->
                     </tbody>
@@ -115,7 +86,6 @@
         </div><!-- contentWrap -->
 </div>
 </body>
-<script src="${pageContext.request.contextPath}/javascript/search.js" charset="utf-8"></script>
 <script src="${pageContext.request.contextPath}/javascript/header.js" charset="utf-8"></script>
 
 </html>

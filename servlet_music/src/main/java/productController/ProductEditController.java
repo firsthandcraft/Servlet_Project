@@ -50,23 +50,28 @@ public class ProductEditController extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		ProductService ProductService = new ProductServiceImpl();
 		Product p = new Product();
-		//image ¸ÖÆ¼ÆÄÆ®: request, ÆÄÀÏÀúÀå°æ·Î,¿ë·®, ÀÎÄÚµù, Áßº¹ÆÄÀÏ
+		//image ï¿½ï¿½Æ¼ï¿½ï¿½Æ®: request, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ë·®, ï¿½ï¿½ï¿½Úµï¿½, ï¿½ßºï¿½ï¿½ï¿½ï¿½ï¿½
 				String img=null;
 				int maxSize=1024*1024*10;
-				String uploadPath="C:\\backendminiproject\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\album_img";
+//				String uploadPath="C:\\BackendToyProject\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\album_img\\";
+				String uploadPath=request.getSession().getServletContext().getRealPath("/album_img");
+				
+				
 				File upDir=new File(uploadPath);
 				if(!upDir.exists()) {
 					upDir.mkdir();
 				}
 				System.out.println("minsert - upDir"+upDir);
 				try {
-					// MultipartRequestÇü½Ä :request,ÆÄÀÏÀúÀå°æ·Î,¿ë·®,ÀÎÄÚµùÅ¸ÀÔ,Áßº¹ÆÄÀÏ¸í¿¡ ´ëÇÑ ±âº» Á¤Ã¥
+					// MultipartRequestï¿½ï¿½ï¿½ï¿½ :request,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ë·®,ï¿½ï¿½ï¿½Úµï¿½Å¸ï¿½ï¿½,ï¿½ßºï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½âº» ï¿½ï¿½Ã¥
 					MultipartRequest multi = new MultipartRequest(request, uploadPath,maxSize,"utf-8",new DefaultFileRenamePolicy());
 					p.setP_title(multi.getParameter("p_title"));
 					p.setP_producer(multi.getParameter("p_producer"));
 					p.setP_text(multi.getParameter("p_text"));
 					p.setP_img(multi.getParameter("p_img"));
-					String newUploadPath="C:\\backendminiproject\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\album_img\\";
+//					String newUploadPath="C:\\BackendToyProject\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\album_img\\";
+					String newUploadPath=request.getSession().getServletContext().getRealPath("/album_img/");
+
 					Enumeration files = multi.getFileNames();
 					while(files.hasMoreElements()) {
 							String file01=(String)files.nextElement();
@@ -75,7 +80,7 @@ public class ProductEditController extends HttpServlet {
 							if(img!=null) {
 								Product p1= ProductService.findProduct(p.getP_title());
 								String arr[]=p1.getP_img().split("/");
-								String fname=arr[arr.length-1];//¹è¿­ÀÌ 0ºÎÅÍ µé¾î°¡°Ô
+								String fname=arr[arr.length-1];//ï¿½è¿­ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°¡ï¿½ï¿½
 								File f= new File(newUploadPath+fname);
 								//System.out.println(f);
 								f.delete();

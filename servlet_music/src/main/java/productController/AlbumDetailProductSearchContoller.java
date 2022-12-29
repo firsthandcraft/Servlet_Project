@@ -8,23 +8,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import model.Product;
 import service.ProductService;
 import service.ProductServiceImpl;
 
 /**
- * Servlet implementation class ProductSearchController
+ * Servlet implementation class AlbumDetailProductSearchContoller
  */
-@WebServlet("/ProductSearchController")
-public class ProductSearchController extends HttpServlet {
+@WebServlet("/AlbumDetailProductSearchContoller")
+public class AlbumDetailProductSearchContoller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProductSearchController() {
+    public AlbumDetailProductSearchContoller() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,14 +33,6 @@ public class ProductSearchController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doPost(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		ProductService service = new ProductServiceImpl();
@@ -49,11 +40,18 @@ public class ProductSearchController extends HttpServlet {
 		String p_title= request.getParameter("p_title");
 		Product p = service.findProduct(p_title);
 		request.setAttribute("p",p);
-	
-		String path = "/product/productEdit.jsp";
-		System.out.println("p :::ProductSearchController-: " +p);
+		String path = "/AlbumList/AlbumDetail.jsp";
+		System.out.println("p :::-: " +p);
 		RequestDispatcher dispatcher= request.getRequestDispatcher(path);
-		dispatcher.forward(request, response);	
+		dispatcher.forward(request, response);		
+		}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
