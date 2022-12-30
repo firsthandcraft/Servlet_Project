@@ -1,10 +1,10 @@
 @charset "utf-8";
-body{background-color:pink;}
+
 header{background-color:#fff0;}
 header h4{background-color:#28282880;}
 main{padding:0;height:100%;}
 .topBanner{height:300px;display:flex;flex-wrap:nowrap;background:linear-gradient(180deg, rgba(0,0,0,0) 21%, rgb(0 0 0 / 51%) 100%);}
-.topBanner li:first-child{width:30%;min-width:192px;max-width:300px;padding:30px;}
+.topBanner li:first-child{min-width:192px;max-width:300px;padding:30px;}
 .topBanner li:first-child img{background-color:aliceblue;box-shadow: 0 4px 60px rgb(0 0 0 / 50%);}
 .topBanner p{margin-top:70px;}
 .topBanner h4{font-size:62px; font-weight:700;}

@@ -41,7 +41,7 @@ public class AlbumDetailProductSearchContoller extends HttpServlet {
 		Product p = service.findProduct(p_title);
 		request.setAttribute("p",p);
 		String path = "/AlbumList/AlbumDetail.jsp";
-		System.out.println("p :::-: " +p);
+		System.out.println("p :AlbumDetailProductSearchContoller: " +p);
 		RequestDispatcher dispatcher= request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);		
 		}

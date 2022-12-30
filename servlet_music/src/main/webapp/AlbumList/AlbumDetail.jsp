@@ -15,7 +15,7 @@
 <title>AlbumDetail</title>
 </head>
 <!-- 로그인이 아닐 경우 넣기  -->
-<body>
+<body style="background:url('${p.p_img}') no-repeat 0 center;background-size: 106%;">
 
 <div class="Wrap">
     <!-- nav -->

@@ -56,11 +56,11 @@
                         <tr>
                             <td>1</td>
                             <td>
-                                <a class="albumImg" href="${pageContext.request.contextPath}/AlbumDetailProductSearchContoller">
+                                <a class="albumImg" href="${pageContext.request.contextPath}/AlbumDetailProductSearchContoller?p_title=${p.p_title}">
                                 	<img src="${p.p_img}" alt="albumimg">
                                     <span class="title">${p.p_title}</span>
                                	</a>  
-                               	<input type="hide"name="p_title" value="${p.p_title}">
+                               	
                             </td>
                             <td><a  href="#"> ${p.p_producer}</a></td>
                             <td>${p.p_date}</td>
