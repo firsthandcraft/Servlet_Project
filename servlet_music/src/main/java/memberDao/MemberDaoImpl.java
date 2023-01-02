@@ -10,13 +10,13 @@ import conn.DBConnect;
 import model.Member;
 
 public class MemberDaoImpl implements MemberDao{
-	//dbConnectionÀ» ÀÌ¿ëÇÑ ¹æ¹ý 2°¡Áö
-		//01. conn -> DBConnection ÆÄÀÏÀ» ºÒ·¯¿À±â
+	//dbConnectionï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½
+		//01. conn -> DBConnection ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
 		private DBConnect db;
 		public MemberDaoImpl() {
 			db =DBConnect.getInstance();	
 		}
-		//02. ¿©±â¿¡ ¾²±â
+		//02. ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½
 		public Connection conn=null;
 		public ResultSet rs= null;
 		public PreparedStatement pstmt= null;
@@ -25,10 +25,10 @@ public class MemberDaoImpl implements MemberDao{
 		public void con() {
 			try {
 				Class.forName(jdbc_driver);
-				// µ¥ÀÌÅÍº£ÀÌ½º ¿¬°áÁ¤º¸¸¦ ÀÌ¿ëÇØ Connection ÀÎ½ºÅÏ½º È®º¸
+				// ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ Connection ï¿½Î½ï¿½ï¿½Ï½ï¿½ È®ï¿½ï¿½
 				conn = DriverManager.getConnection(jdbc_url, "hr", "hr");
-			} catch (Exception e) {//¸ðµç ¿¹¿ÜÀÇ ÃÖ°í Á¶»ó
-				e.printStackTrace();//¿¹¿Ü ¹ß»ý ´ç½Ã È£Ãâ½ºÅÃ¿¡ ÀÖ´Â ¸Þ¼­µåÀÇ Á¤º¸¿Í ¿¹¿Ü ¸Þ¼¼Áö¸¦ È­¸é¿¡ Ãâ·Â
+			} catch (Exception e) {//ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½
+				e.printStackTrace();//ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ ï¿½ï¿½ï¿½ È£ï¿½â½ºï¿½Ã¿ï¿½ ï¿½Ö´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½é¿¡ ï¿½ï¿½ï¿½
 			}
 		}
 		public void discon() {
@@ -45,8 +45,8 @@ public class MemberDaoImpl implements MemberDao{
 	@Override
 	public void insert(Member m) {
 		// TODO Auto-generated method stub
-		//dbConnection 1¹øÂ° ¹æ¹ýÀ¸·Î ½ÇÇà(conn¸¸)
-				String sql="insert into servlet_music_member values((select 'M' || to_char(sysdate,'yyyymmdd') ||\r\n"
+		//dbConnection 1ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(connï¿½ï¿½)
+				String sql="insert into servlet_music_member values((select 'P' || to_char(sysdate,'yyyymmdd') ||\r\n"
 						+ "        LPAD(nvl(max(substr(mno,11))+1,1),4,'0') from SERVLET_MUSIC_MEMBER where \r\n"
 						+ "        substr(mno,2,8) = to_char(sysdate,'yyyymmdd')),?,?,?,?,?,?)";
 				try {
@@ -59,7 +59,7 @@ public class MemberDaoImpl implements MemberDao{
 					pstmt.setString(5, m.getGender());
 					pstmt.setString(6, m.getMembershipPlan());			
 					pstmt.executeUpdate();
-				} catch(SQLException e) {//sqlÀÇ ¿¹¿Ü
+				} catch(SQLException e) {//sqlï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 					e.printStackTrace();
 				} finally {
 					discon();

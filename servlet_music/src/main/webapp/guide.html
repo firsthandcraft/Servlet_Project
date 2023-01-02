@@ -49,6 +49,15 @@
 		select * from servlet_music_product;
 		create sequence seq_servlet_music_product;
 		
+		
+		        create table  SERVLET_MUSIC_PRODUCT_ORDER(
+        o_num	varchar2(500) ,--주문번호
+        o_pnum number references SERVLET_MUSIC_PRODUCT(p_num) on delete cascade,--제품번호
+        o_mno varchar2(500) references SERVLET_MUSIC_MEMBER(mno) on delete cascade,--회원번호연결
+        o_date		 date,--주문날짜
+        o_state		 number,--주문상태 이용권 만료
+         d_state		 number--주문 가능
+        );--
 				
 	</p>
 	<h4>로그인, 회원가입</h4>

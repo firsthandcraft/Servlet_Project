@@ -3,7 +3,7 @@ package model;
 import java.sql.Date;
 
 public class Product {
-	private int p_num;
+	private String p_num;
 	private String p_title; 
 	private Date p_date;
 	private String p_producer; 
@@ -11,7 +11,7 @@ public class Product {
 	private String p_img;
 	private String p_email;
 	private String p_seller;//==MembershipPlan==seller
-	public Product(int p_num, String p_title, Date p_date, String p_producer, String p_text, String p_img,
+	public Product(String p_num, String p_title, Date p_date, String p_producer, String p_text, String p_img,
 			String p_email, String p_seller) {
 		super();
 		this.p_num = p_num;
@@ -23,20 +23,19 @@ public class Product {
 		this.p_email = p_email;
 		this.p_seller = p_seller;
 	}
+	public Product() {
+		super();
+	}
 	
 	public Product(String p_email, String p_seller) {
 		super();
 		this.p_email = p_email;
 		this.p_seller = p_seller;
 	}
-
-	public Product() {
-		super();
-	}
-	public int getP_num() {
+	public String getP_num() {
 		return p_num;
 	}
-	public void setP_num(int p_num) {
+	public void setP_num(String p_num) {
 		this.p_num = p_num;
 	}
 	public String getP_title() {
@@ -86,6 +85,6 @@ public class Product {
 		return "Product [p_num=" + p_num + ", p_title=" + p_title + ", p_date=" + p_date + ", p_producer=" + p_producer
 				+ ", p_text=" + p_text + ", p_img=" + p_img + ", p_email=" + p_email + ", p_seller=" + p_seller + "]";
 	}
-
+	
 
 }
