@@ -7,7 +7,7 @@ import model.Order;
 public interface OrderService {
 	void addOrder(Order o);
 	Order getOrder(String o_num);
-	ArrayList<Order> orderList(String o_mno,String o_state);
+	ArrayList<Order> orderList(String o_mno);
 	void editState(String o_num);
 	void delOrder(String o_num);
 }

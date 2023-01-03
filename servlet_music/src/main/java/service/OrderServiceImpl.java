@@ -24,9 +24,9 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public ArrayList<Order> orderList(String o_mno, String o_state) {
+	public ArrayList<Order> orderList(String o_mno) {
 		// TODO Auto-generated method stub
-		return dao.selectAll(o_mno, o_state);
+		return dao.selectAll(o_mno);
 	}
 
 	@Override

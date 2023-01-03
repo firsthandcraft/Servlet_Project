@@ -37,7 +37,7 @@
 		<c:if test="${not empty products}">	
         <!-- 데이터가 있을때 -->
         <div class="playList">
-        <h6>My Music</h6>
+        <h3 class="bold">My Music</h3>
 		<a href="${pageContext.request.contextPath}/product/productInsert.jsp">                    
         	<span class="material-symbols-outlined">add_circle</span>
         </a>

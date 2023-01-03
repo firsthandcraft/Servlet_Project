@@ -79,7 +79,7 @@ public class OrderDaoImpl implements OrderDao{
 		return o;
 	}
 	@Override
-	public ArrayList<Order> selectAll(String o_mno, String o_state) {
+	public ArrayList<Order> selectAll(String o_mno) {
 		// TODO Auto-generated method stub
 		String sql="select * from SERVLET_MUSIC_PRODUCT_ORDER";
 		ArrayList<Order> list= new ArrayList<Order>();
