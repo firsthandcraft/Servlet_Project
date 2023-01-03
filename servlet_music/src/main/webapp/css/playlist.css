@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+header{background-color:#fff0;}
+header h4{background-color:#28282880;}
+main{padding:0;height:100%;}
+.topBanner{display:flex;flex-wrap:nowrap;background:linear-gradient(180deg, rgba(0,0,0,0) 21%, rgb(0 0 0 / 51%) 100%);}
+.topBanner li:first-child{padding:30px;}
+.topBanner p{margin-top:70px;}
+.topBanner h4{font-size:62px; font-weight:700;}
+.topBanner h5{margin-top:20px;font-size:14px;}
+.topBanner h5 span{height:100%;font-size:12px;margin-left:20px;}
+.playIcon{padding:10px 30px;background:linear-gradient(180deg, rgba(0,0,0,0.3601190476190477) -34%, rgba(0,0,0,0.9589810924369747) 102%);}
+.playIcon>ul{display:flex;flex-wrap:nowrap;}
+.playIcon span{font-size:50px;}
+.playIcon>ul>li:nth-child(2){position:relative;margin-left:20px;}
+.playIcon>ul>li:nth-child(2) a span{margin-top:4px;font-size:40px; color:#fff;opacity:0.5;transition:300ms;}
+.playIcon>ul>li:nth-child(2) a span:hover{opacity:1;}
+.playIcon .submenu{width:100px;position:absolute;background-color:#282828;flex-wrap:wrap;}
+.playIcon .submenu li{padding:10px;width:100%;}
+.playIcon .submenu li:hover {background-color: hsla(0,0%,100%,.1);}
+.playIcon .submenu li a{font-size:14px;}
+.music{padding:0 30px;height:100%;background:#000;}
+.music table{width:100%;}
+.music table thead th{height:36px;border-bottom:1px solid hsla(0,0%,100%,.1);color:#b3b3b3;}
+.music table tr{border-radius:4px;}
+.music table tr td,.music table tr th{padding:8px 10px;text-align:left;}
+.music table thead tr{margin-bottom:8px;}
+.music .titleImg{display:flex;}
+.music .titleImg img{width:40px;height:40px;}
+.music .titleImg div{margin-left:10px;}
+.music table tbody tr:hover{background-color:hsla(0,0%,100%,.3);}
+td,th{vertical-align: middle;}
+table{border-spacing:0;}

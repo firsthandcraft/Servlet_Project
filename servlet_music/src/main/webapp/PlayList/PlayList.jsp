@@ -1,18 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/reset.css">
+<head><link rel="stylesheet" href="${pageContext.request.contextPath}/css/reset.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/albumDetail.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/playlist.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
   crossorigin="anonymous"></script>
 <meta charset="utf-8">
-<title>AlbumDetail</title>
+<title>PlayList</title>
 <script type="text/javascript">
 function order(s){
 	s.submit();
@@ -20,7 +18,7 @@ function order(s){
 </script>
 </head>
 <!-- 로그인이 아닐 경우 넣기  -->
-<body style="background:url('${p.p_img}') no-repeat 0 center;background-size: 106%;">
+<body>
 
 <div class="Wrap">
     <!-- nav -->
@@ -30,16 +28,10 @@ function order(s){
     <%@ include file="/common/header.jsp" %>
     <!-- header -->
     <div class="contentWrap"><!-- contentWrap -->
-    <form name="OForm" action="${pageContext.request.contextPath}/OrderAddController" method="post">
-		<input type="hidden" name="o_pnum" value="${p.p_num}">
-		<input type="hidden" name="o_state" value="true">
          <main><!-- main -->
          	<ul class="topBanner">
-         		<li><img src="${p.p_img}"alt="앨범이미지"></img></li>
          		<li>
-         			<p>${p.p_date}</p>
-         			<h4>${p.p_title}</h4>
-         			<h5>Artist <span>${p.p_producer}</span></h5>
+         			<h4 class="bold">MY PLAYLIST</h4>
          		</li>
          	</ul>
          	<section class="playIcon">
@@ -47,14 +39,14 @@ function order(s){
          			<li><button type="button" onclick="order(this.form)"><span class="material-symbols-outlined">play_circle</span></button></li>
          			<li>
          				<a href="#"><span class="material-symbols-outlined">more_horiz</span></a>
-         				<ul class="submenu">
+         				<ul class="submenu hide">
          					<li><a href="#">신고하기</a></li>
          					<li><a href="#">공유하기</a></li>
          				</ul>
          			</li>
          		</ul>
          	</section>
-
+  
          	 <div class="music" >
                 <table>
                     <thead>
@@ -68,30 +60,23 @@ function order(s){
                     </thead>
                     <tbody>
                         <!-- 반복 -->
+                         <c:forEach var="p" items="${products}">
                         <tr>
-                            <td>1</td>
+                            <td>${p.p_num}</td>
                             <td>
-                                <div class="titleImg">
-                                    <img src="" alt="">
-                                    <div>
-                                        <p>제목...</p>
-                                        <p>Artist name</p>
-                                    </div>
-                                </div>
-                                
+                            	<img src="${p.p_img}" alt="albumimg">
+                                <span class="title">${p.p_title}</span>
                             </td>
-                            <td>앨범명</td>
-                            <td>2021.01.19</td>
-                            <td>3:20</td>
+                            <td>${p.p_producer}</td>
+                            <td>${p.p_date}</td>
                          </tr>
-                      
+                      </c:forEach>
                         <!-- 반복 -->
                         <!-- 최대 50개 -->
                     </tbody>
                 </table>
             </div>
         </main><!-- main -->
-             </form>
         </div><!-- contentWrap -->
 </div>
 </body>

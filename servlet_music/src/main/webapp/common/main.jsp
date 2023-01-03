@@ -64,7 +64,7 @@
                     <ul class="Mcontent">
 						<c:forEach var="p" items="${products}">
 							<li>
-								<a href="${pageContext.request.contextPath}/ProductSearchController?p_title=${p.p_title}">
+								<a href="${pageContext.request.contextPath}/AlbumDetailProductSearchContoller?p_title=${p.p_title}">
 									<img src="${p.p_img}"alt="albumimg">
 									<span>${p.p_title}</span>
 									<span><small>만든사람: ${p.p_producer}</small></span>

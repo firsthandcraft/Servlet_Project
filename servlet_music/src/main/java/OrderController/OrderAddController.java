@@ -2,6 +2,7 @@ package OrderController;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,8 +49,17 @@ public class OrderAddController extends HttpServlet {
 		HttpSession session = request.getSession();
 		String o_mno=(String)session.getAttribute("mno");
 		Order o = new Order();
-		//
-		o.setO_num("");
+		o.setO_pnum(request.getParameter("o_pnum"));
+//		o.setO_mno(o_mno);
+		o.setO_mno("P202301030001");
+		o.setO_state(request.getParameter("o_state"));
+		service.addOrder(o);
+		System.out.println("OrderAddController//mno"+o_mno);
+		System.out.println("OrderAddController//SERVLET_MUSIC_PRODUCT_ORDER"+o);
+		
+		String path="/AlbumListProductListAllController";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+		dispatcher.forward(request, response);
 	}
 
 }

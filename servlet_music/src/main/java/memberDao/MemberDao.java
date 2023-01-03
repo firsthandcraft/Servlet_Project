@@ -9,4 +9,5 @@ public interface MemberDao {
 	void delete (String email);
 	Member select(String email);
 	void pwdUpdate (Member m);
+
 }

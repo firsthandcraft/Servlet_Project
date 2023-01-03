@@ -1,6 +1,7 @@
 package productController;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,25 +9,23 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import model.Member;
 import model.Product;
-import service.MemberService;
-import service.MemberServiceImpl;
 import service.ProductService;
 import service.ProductServiceImpl;
 
 /**
- * Servlet implementation class AlbumDetailProductSearchContoller
+ * Servlet implementation class AlbumListProductListAllController
  */
-@WebServlet("/AlbumDetailProductSearchContoller")
-public class AlbumDetailProductSearchContoller extends HttpServlet {
+@WebServlet("/AlbumListProductListAllController")
+public class AlbumListProductListAllController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AlbumDetailProductSearchContoller() {
+    public AlbumListProductListAllController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,29 +35,22 @@ public class AlbumDetailProductSearchContoller extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8");
-		ProductService service = new ProductServiceImpl();
-		MemberService serviceM= new MemberServiceImpl();
-		//HttpSession session = request.getSession();
-		Member m =serviceM.findMember(getServletInfo());
-		
-		
-		String p_title= request.getParameter("p_title");
-		Product p = service.findProduct(p_title);
-		request.setAttribute("p",p);
-		String path = "/AlbumList/AlbumDetail.jsp";
-		System.out.println("p :AlbumDetailProductSearchContoller: " +p);
-		RequestDispatcher dispatcher= request.getRequestDispatcher(path);
-		dispatcher.forward(request, response);		
-		}
+doPost(request, response);	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		ProductService ProductService = new ProductServiceImpl();
+		HttpSession session = request.getSession(false);
+		ArrayList<Product> products= ProductService.findAll();
+		request.setAttribute("products", products);
+		String path = "/AlbumList/AlbumList.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+		dispatcher.forward(request, response);
 	}
 
 }
